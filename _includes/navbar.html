@@ -1,10 +1,10 @@
 {%- assign sorted_pages = site.pages | sort:"order" -%}
 <div style="position: sticky; top: 0; width: 100%;">
-    <div id="navbar">
+    <div class="navbar">
         <!-- This must be at the start, so that the `nav` sibling can be detected. -->
         <input id="navbar-dropdown-checkbox" type="checkbox" style="display: none;" />
-        <div id="logo">
-            <a href="{{ "/" | relative_url }}">Amy<span id="exclamation">!</span></a>
+        <div class="logo">
+            <a href="{{ "/" | relative_url }}">Amy<span class="exclamation">!</span></a>
         </div>
         <nav>
             <ul>

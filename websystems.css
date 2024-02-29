@@ -22,7 +22,7 @@ body {
 
 /* Navbar */
 
-#navbar {
+.navbar {
     --navbar-height: 5rem;
     --navbar-padding: 2.5rem;
     display: flex;
@@ -38,62 +38,62 @@ body {
     z-index: 2;
 }
 
-#navbar #exclamation {
+.navbar .exclamation {
     color: var(--primary);
 }
 
-#navbar #logo a {
+.navbar .logo a {
     transition: all 0.10s ease-out;
     font-size: 1.125rem;
     text-decoration: none;
     color: black;
 }
 
-#navbar #logo a:hover {
+.navbar .logo a:hover {
     transition: all 0.10s ease-out;
     font-size: 1.125rem;
     text-decoration: none;
     color: var(--primary);
 }
 
-#navbar nav ul {
+.navbar nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
     
-#navbar nav ul li a {
+.navbar nav ul li a {
     text-decoration: none;
     color: black;
 }
 
-#navbar #navbar-dropdown-checkbox {
+.navbar #navbar-dropdown-checkbox {
     display: none;
 }
 
-#navbar nav {
+.navbar nav {
     background: white;
     z-index: 1;
 }
 
 /* Mobile stuff */
 
-#navbar #navbar-dropdown-button img {
+.navbar #navbar-dropdown-button img {
     transition: all 0.10s ease-out;
     cursor: pointer;
     width: 1.5rem;
     height: 1.5rem;
 }
 
-#navbar #navbar-dropdown-checkbox:checked ~ #navbar-dropdown-button img {
+.navbar #navbar-dropdown-checkbox:checked ~ #navbar-dropdown-button img {
     transform: rotate(90deg);
 }
 
-#navbar #navbar-dropdown-checkbox:checked ~ nav  {
+.navbar #navbar-dropdown-checkbox:checked ~ nav  {
     top: var(--navbar-height)
 }
 
-#navbar nav {
+.navbar nav {
     transition: all 0.10s ease-out;
     position: absolute;
     left: 0;
@@ -101,17 +101,17 @@ body {
     width: 100%;
 }
 
-#navbar nav ul li {
+.navbar nav ul li {
     position: relative;
 }
 
-#navbar nav ul li a {
+.navbar nav ul li a {
     padding: 0 var(--navbar-padding);
     line-height: var(--navbar-padding);
     display: block;
 }
 
-#navbar nav ul li::after {
+.navbar nav ul li::after {
     transition: all 0.10s ease-out;
     position: absolute;
     top: 50%;
@@ -125,22 +125,22 @@ body {
     border-radius: 100%;
 }
 
-#navbar nav ul li.active::after {
+.navbar nav ul li.active::after {
     opacity: 1;
 }
 
-#navbar nav ul li:not(.active):hover::after {
+.navbar nav ul li:not(.active):hover::after {
     opacity: 1;
 }
 
 /* Desktop Stuff */
 
 @media only screen and (min-width: 768px) {
-    #navbar #navbar-dropdown-button {
+    .navbar #navbar-dropdown-button {
         display: none;
     }
 
-    #navbar nav {
+    .navbar nav {
         height: 100%;
         position: inherit;
         /* this is bad practice, but needed here */
@@ -149,31 +149,31 @@ body {
         width: inherit;
     }
     
-    #navbar nav ul {
+    .navbar nav ul {
         display: flex;
         flex-direction: row;
         height: 100%;
     }
     
-    #navbar nav ul li {
+    .navbar nav ul li {
         position: relative;
         height: 100%;
         display: flex;
         align-items: center;
     }
 
-    #navbar nav ul li a {
+    .navbar nav ul li a {
         padding: 0 1rem;
         height: 100%;
         display: flex;
         align-items: center;
     }
 
-    #navbar nav ul li::after {
+    .navbar nav ul li::after {
         display: none;
     }
     
-    #navbar nav ul li::before {
+    .navbar nav ul li::before {
         transition: all 0.10s ease-out;
         position: absolute;
         left: 50%;
@@ -186,11 +186,11 @@ body {
         opacity: 0;
     }
     
-    #navbar nav ul li.active::before {
+    .navbar nav ul li.active::before {
         opacity: 1;
     }
     
-    #navbar nav ul li:not(.active):hover::before {
+    .navbar nav ul li:not(.active):hover::before {
         opacity: 1;
     }
 } 
