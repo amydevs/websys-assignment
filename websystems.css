@@ -14,6 +14,7 @@
 
     --navbar-height: 5rem;
     --navbar-padding: 2.5rem;
+    --content-max-width: 80rem;
 }
 
 body {
@@ -32,7 +33,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: var(--navbar-height);
-    max-width: 80rem;
+    max-width: var(--content-max-width);
     margin: 0 auto;
     padding: 0 var(--navbar-padding);
     background: white;
