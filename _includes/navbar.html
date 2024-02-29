@@ -1,23 +1,25 @@
 {%- assign sorted_pages = site.pages | sort:"order" -%}
-<div id="navbar">
-    <!-- This must be at the start, so that the `nav` sibling can be detected. -->
-    <input id="navbar-dropdown-checkbox" type="checkbox" style="display: none;" />
-    <div id="logo">
-        <a href="{{ "/" | relative_url }}">Amy<span id="exclamation">!</span></a>
+<div style="position: fixed; width: 100%;">
+    <div id="navbar">
+        <!-- This must be at the start, so that the `nav` sibling can be detected. -->
+        <input id="navbar-dropdown-checkbox" type="checkbox" style="display: none;" />
+        <div id="logo">
+            <a href="{{ "/" | relative_url }}">Amy<span id="exclamation">!</span></a>
+        </div>
+        <nav>
+            <ul>
+                {% for node in sorted_pages %}
+                    {%- assign page_url = node.url | relative_url -%}
+                    {%- if page.url == node.url -%}
+                        <li class="active"><a href="{{ page_url }}" class="active">{{node.title}}</a></li>
+                    {%- else -%}
+                        <li><a href="{{ page_url }}">{{node.title}}</a></li>
+                    {%- endif -%}
+                {% endfor %}
+            </ul>
+        </nav>
+        <label title="Toggle Mobile Dropdown" id="navbar-dropdown-button" for="navbar-dropdown-checkbox">
+            <img src="{{ "/assets/img/nav.svg" | relative_url }}" />
+        </label>
     </div>
-    <nav>
-        <ul>
-            {% for node in sorted_pages %}
-                {%- assign page_url = node.url | relative_url -%}
-                {%- if page.url == node.url -%}
-                    <li class="active"><a href="{{ page_url }}" class="active">{{node.title}}</a></li>
-                {%- else -%}
-                    <li><a href="{{ page_url }}">{{node.title}}</a></li>
-                {%- endif -%}
-            {% endfor %}
-        </ul>
-    </nav>
-    <label title="Toggle Mobile Dropdown" id="navbar-dropdown-button" for="navbar-dropdown-checkbox">
-        <img src="{{ "/assets/img/nav.svg" | relative_url }}" />
-    </label>
 </div>
