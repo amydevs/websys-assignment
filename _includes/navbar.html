@@ -11,7 +11,7 @@
                 {% for node in sorted_pages %}
                     {%- assign page_url = node.url | relative_url -%}
                     {%- if page.url == node.url -%}
-                        <li class="active"><a href="{{ page_url }}" class="active">{{node.title}}</a></li>
+                        <li class="active"><a href="{{ page_url }}">{{node.title}}</a></li>
                     {%- else -%}
                         <li><a href="{{ page_url }}">{{node.title}}</a></li>
                     {%- endif -%}
