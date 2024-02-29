@@ -4,12 +4,12 @@
         <!-- This must be at the start, so that the `nav` sibling can be detected. -->
         <input id="navbar-dropdown-checkbox" type="checkbox" style="display: none;" />
         <div class="logo">
-            <a href="{{ "/" | relative_url }}">Amy<span class="exclamation">!</span></a>
+            <a href="index.html">Amy<span class="exclamation">!</span></a>
         </div>
         <nav>
             <ul>
                 {% for node in sorted_pages %}
-                    {%- assign page_url = node.url | relative_url -%}
+                    {%- assign page_url = node.path -%}
                     {%- if page.url == node.url -%}
                         <li class="active"><a href="{{ page_url }}">{{node.title}}</a></li>
                     {%- else -%}
@@ -19,7 +19,7 @@
             </ul>
         </nav>
         <label title="Toggle Mobile Dropdown" id="navbar-dropdown-button" for="navbar-dropdown-checkbox">
-            <img alt="Toggle Mobile Dropdown" src="{{ "/assets/img/nav.svg" | relative_url }}" />
+            <img alt="Toggle Mobile Dropdown" src="assets/img/nav.svg" />
         </label>
     </div>
 </div>
