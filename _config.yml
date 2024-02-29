@@ -9,3 +9,5 @@ plugins:
 exclude:
   - README.md
   - "*.nix"
+  - scripts/
+  - tmp/
