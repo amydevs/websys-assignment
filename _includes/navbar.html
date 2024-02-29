@@ -1,5 +1,5 @@
 {%- assign sorted_pages = site.pages | sort:"order" -%}
-<div style="position: sticky; top: 0; width: 100%;">
+<div style="position: fixed; top: 0; width: 100%;">
     <div class="navbar">
         <!-- This must be at the start, so that the `nav` sibling can be detected. -->
         <input id="navbar-dropdown-checkbox" type="checkbox" style="display: none;" />
@@ -19,7 +19,7 @@
             </ul>
         </nav>
         <label title="Toggle Mobile Dropdown" id="navbar-dropdown-button" for="navbar-dropdown-checkbox">
-            <img src="{{ "/assets/img/nav.svg" | relative_url }}" />
+            <img alt="Toggle Mobile Dropdown" src="{{ "/assets/img/nav.svg" | relative_url }}" />
         </label>
     </div>
 </div>

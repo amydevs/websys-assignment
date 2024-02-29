@@ -11,6 +11,9 @@
     --black: #000000;
     --gray: #6c757d;
     --gray-dark: #343a40;
+
+    --navbar-height: 5rem;
+    --navbar-padding: 2.5rem;
 }
 
 body {
@@ -23,8 +26,6 @@ body {
 /* Navbar */
 
 .navbar {
-    --navbar-height: 5rem;
-    --navbar-padding: 2.5rem;
     display: flex;
     position: relative;
     flex-direction: row;
@@ -188,3 +189,37 @@ body {
         opacity: 1;
     }
 } 
+
+/* index.html */
+
+.section-impression {
+    min-height: calc(100vh - var(--navbar-height));
+    padding: 0 2.5rem;
+    margin-top: var(--navbar-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    gap: 2;
+}
+
+.section-impression img {
+    max-width: 460px;
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
+}
+
+.section-impression .blurb {
+    padding: 2.5rem 0;
+    font-size: 1.25rem;
+}
+
+.section-impression .blurb .title {
+    font-size: 1.75rem;
+}
+
+.section-impression .blurb .name {
+    color: var(--primary);
+}
