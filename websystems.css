@@ -102,13 +102,12 @@ body {
 }
 
 #navbar nav ul li {
-    padding: 0 var(--navbar-padding);
     position: relative;
 }
 
 #navbar nav ul li a {
+    padding: 0 var(--navbar-padding);
     line-height: var(--navbar-padding);
-    width: 100%;
     display: block;
 }
 
@@ -157,8 +156,14 @@ body {
     }
     
     #navbar nav ul li {
-        padding: 0 1rem;
         position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    #navbar nav ul li a {
+        padding: 0 1rem;
         height: 100%;
         display: flex;
         align-items: center;
