@@ -23,15 +23,17 @@ body {
 /* Navbar */
 
 #navbar {
+    --navbar-height: 5rem;
+    --navbar-padding: 2.5rem;
     display: flex;
     position: relative;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 5rem;
+    height: var(--navbar-height);
     max-width: 80rem;
     margin: 0 auto;
-    padding: 0 2.5rem;
+    padding: 0 var(--navbar-padding);
 }
 
 #navbar #exclamation {
@@ -39,27 +41,90 @@ body {
 }
 
 #navbar #logo a {
-    transition: all 0.25s ease-out;
+    transition: all 0.10s ease-out;
     font-size: 1.125rem;
     text-decoration: none;
     color: black;
 }
 
 #navbar #logo a:hover {
-    transition: all 0.25s ease-out;
+    transition: all 0.10s ease-out;
     font-size: 1.125rem;
     text-decoration: none;
     color: var(--primary);
 }
 
+#navbar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+    
+#navbar nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+#navbar #navbar-dropdown-checkbox {
+    display: none;
+}
+
 /* Mobile stuff */
 
-/* #navbar #navbar-dropdown-checkbox {
-    display: none;
-} */
+#navbar #navbar-dropdown-button img {
+    transition: all 0.10s ease-out;
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+}
 
-#navbar-dropdown-checkbox:checked ~ * {
+#navbar #navbar-dropdown-checkbox:checked ~ #navbar-dropdown-button img {
+    transform: rotate(90deg);
+}
+
+#navbar #navbar-dropdown-checkbox:checked ~ nav  {
+    top: var(--navbar-height)
+}
+
+#navbar nav {
+    transition: all 0.10s ease-out;
+    position: absolute;
+    left: 0;
+    top: -500%;
+    width: 100%;
+}
+
+#navbar nav ul li {
+    padding: 0 var(--navbar-padding);
+    position: relative;
+}
+
+#navbar nav ul li a {
+    line-height: var(--navbar-padding);
+    width: 100%;
+    display: block;
+}
+
+#navbar nav ul li::after {
+    transition: all 0.10s ease-out;
+    position: absolute;
+    top: 50%;
+    right: calc(var(--navbar-padding) + 0.5rem);
+    transform: translateY(-50%);
+    background: var(--primary);
+    width: 10px;
+    height: 10px;
+    content: "";
     opacity: 0;
+    border-radius: 100%;
+}
+
+#navbar nav ul li.active::after {
+    opacity: 1;
+}
+
+#navbar nav ul li:not(.active):hover::after {
+    opacity: 1;
 }
 
 /* Desktop Stuff */
@@ -70,16 +135,17 @@ body {
     }
 
     #navbar nav {
-        display: inline;
         height: 100%;
+        position: inherit;
+        /* this is bad practice, but needed here */
+        top: inherit !important;
+        left: inherit;
+        width: inherit;
     }
     
     #navbar nav ul {
         display: flex;
         flex-direction: row;
-        list-style: none;
-        padding: 0;
-        margin: 0;
         height: 100%;
     }
     
@@ -90,9 +156,13 @@ body {
         display: flex;
         align-items: center;
     }
+
+    #navbar nav ul li::after {
+        display: none;
+    }
     
     #navbar nav ul li::before {
-        transition: all 0.25s ease-out;
+        transition: all 0.10s ease-out;
         position: absolute;
         left: 50%;
         bottom: 0;
@@ -110,11 +180,5 @@ body {
     
     #navbar nav ul li:not(.active):hover::before {
         opacity: 1;
-    }
-    
-    
-    #navbar nav ul li a {
-        text-decoration: none;
-        color: black;
     }
 } 
