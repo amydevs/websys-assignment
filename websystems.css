@@ -202,7 +202,7 @@ body {
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    gap: 2;
+    gap: 2rem;
 }
 
 .section-impression img {
