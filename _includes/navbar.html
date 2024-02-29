@@ -1,5 +1,7 @@
 {%- assign sorted_pages = site.pages | sort:"order" -%}
 <div id="navbar">
+    <!-- This must be at the start, so that the `nav` sibling can be detected. -->
+    <input id="navbar-dropdown-checkbox" type="checkbox" style="display: none;" />
     <div id="logo">
         <a href="{{ "/" | relative_url }}">Amy<span id="exclamation">!</span></a>
     </div>
@@ -15,4 +17,7 @@
             {% endfor %}
         </ul>
     </nav>
+    <label title="Toggle Mobile Dropdown" id="navbar-dropdown-button" for="navbar-dropdown-checkbox">
+        <img src="{{ "/assets/img/nav.svg" | relative_url }}" />
+    </label>
 </div>
