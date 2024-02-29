@@ -22,8 +22,9 @@ body {
 
 /* Navbar */
 
-nav {
+#navbar {
     display: flex;
+    position: relative;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -33,25 +34,29 @@ nav {
     padding: 0 2.5rem;
 }
 
-nav #exclamation {
+#navbar #exclamation {
     color: var(--primary);
 }
 
-nav #logo a {
+#navbar #logo a {
     transition: all 0.25s ease-out;
     font-size: 1.125rem;
     text-decoration: none;
     color: black;
 }
 
-nav #logo a:hover {
+#navbar #logo a:hover {
     transition: all 0.25s ease-out;
     font-size: 1.125rem;
     text-decoration: none;
     color: var(--primary);
 }
 
-nav ul {
+#navbar nav {
+    height: 100%;
+}
+
+#navbar nav ul {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -60,7 +65,7 @@ nav ul {
     height: 100%;
 }
 
-nav ul li {
+#navbar nav ul li {
     padding: 0 1rem;
     position: relative;
     height: 100%;
@@ -68,7 +73,7 @@ nav ul li {
     align-items: center;
 }
 
-nav ul li::before {
+#navbar nav ul li::before {
     transition: all 0.25s ease-out;
     position: absolute;
     left: 50%;
@@ -81,22 +86,33 @@ nav ul li::before {
     opacity: 0;
 }
 
-nav ul li.active::before {
+#navbar nav ul li.active::before {
     opacity: 1;
 }
 
-nav ul li:not(.active):hover::before {
+#navbar nav ul li:not(.active):hover::before {
     opacity: 1;
 }
 
 
-nav ul a {
+#navbar nav ul li a {
     text-decoration: none;
     color: black;
 }
 
+/* Mobile stuff */
+
+#navbar #nav-button {
+    display: none;
+}
+
 @media only screen and (max-width: 768px) {
-    nav ul {
+    #navbar nav {
         display: none;
+    }
+    #navbar #nav-button {
+        display: flex;
+        justify-items: center;
+        align-content: center;
     }
 } 

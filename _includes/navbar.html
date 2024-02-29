@@ -1,16 +1,18 @@
 {%- assign sorted_pages = site.pages | sort:"order" -%}
-<nav>
+<div id="navbar">
     <div id="logo">
         <a href="{{ "/" | relative_url }}">Amy<span id="exclamation">!</span></a>
     </div>
-    <ul>
-        {% for node in sorted_pages %}
-            {%- assign page_url = node.url | relative_url -%}
-            {%- if page.url == node.url -%}
-                <li class="active"><a href="{{ page_url }}" class="active">{{node.title}}</a></li>
-            {%- else -%}
-                <li><a href="{{ page_url }}">{{node.title}}</a></li>
-            {%- endif -%}
-        {% endfor %}
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            {% for node in sorted_pages %}
+                {%- assign page_url = node.url | relative_url -%}
+                {%- if page.url == node.url -%}
+                    <li class="active"><a href="{{ page_url }}" class="active">{{node.title}}</a></li>
+                {%- else -%}
+                    <li><a href="{{ page_url }}">{{node.title}}</a></li>
+                {%- endif -%}
+            {% endfor %}
+        </ul>
+    </nav>
+</div>
