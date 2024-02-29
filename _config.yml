@@ -4,3 +4,5 @@ title: "Amy!" # the name of your site, e.g. ACME Corp.
 theme: null
 sass:
   style: expanded
+plugins:
+  - jekyll-tidy
