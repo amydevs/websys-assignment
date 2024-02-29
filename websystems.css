@@ -125,10 +125,7 @@ body {
     border-radius: 100%;
 }
 
-.navbar nav ul li.active::after {
-    opacity: 1;
-}
-
+.navbar nav ul li.active::after,
 .navbar nav ul li:not(.active):hover::after {
     opacity: 1;
 }
@@ -186,10 +183,7 @@ body {
         opacity: 0;
     }
     
-    .navbar nav ul li.active::before {
-        opacity: 1;
-    }
-    
+    .navbar nav ul li.active::before,
     .navbar nav ul li:not(.active):hover::before {
         opacity: 1;
     }
