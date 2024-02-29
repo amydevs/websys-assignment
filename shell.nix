@@ -27,7 +27,7 @@ mkShell {
     }
     mkdir --parents "$(pwd)/tmp"
 
-    export PATH="$HOME/.gems/bin:$PATH"
+    alias jekyll='bundler exec jekyll'
 
     set +v
   '';
