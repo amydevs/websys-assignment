@@ -135,6 +135,11 @@ body {
     opacity: 1;
 }
 
+/* has selector has only been stable since 2023, be careful! */
+.navbar nav ul:has(li a:focus) .active::after {
+    opacity: 0;
+}
+
 /* Desktop Stuff */
 
 @media only screen and (min-width: 768px) {
@@ -193,6 +198,11 @@ body {
     .navbar nav ul li.active::before,
     .navbar nav ul li:not(.active):hover::before {
         opacity: 1;
+    }
+
+    /* has selector has only been stable since 2023, be careful! */
+    .navbar nav ul:has(li a:focus) .active::before {
+        opacity: 0;
     }
 }
 
