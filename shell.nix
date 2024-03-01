@@ -7,6 +7,7 @@ mkShell {
     git
     pkg-config
     bundix
+    jq
   ];
   # Don't set rpath for native addons
   NIX_DONT_SET_RPATH = true;
