@@ -100,7 +100,7 @@ body {
     transition: all 0.10s ease-out;
     position: absolute;
     left: 0;
-    top: -100%;
+    top: calc(-100% - var(--navbar-padding) / 2);
     width: 100%;
     padding-bottom: calc(var(--navbar-padding) / 2);
     z-index: -1;
