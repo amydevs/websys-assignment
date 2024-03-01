@@ -93,7 +93,7 @@ body {
 }
 
 .navbar #navbar-dropdown-checkbox:checked~nav {
-    top: var(--navbar-height)
+    top: var(--navbar-height);
 }
 
 .navbar nav {
