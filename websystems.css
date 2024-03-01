@@ -26,6 +26,12 @@ body {
 
 /* Navbar */
 
+.navbar-fixed-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 .navbar {
     display: flex;
     position: relative;
