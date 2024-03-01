@@ -7,7 +7,9 @@ do
     if [ $site_path != $file_path ]
     then
         dir=$(dirname $file_path)
-        relative_dir=${dir:site_path_length}
+        
+        relative_dir=$(echo $dir | cut -c $(($site_path_length+1))-)
+        echo $relative_dir
         upload_return=$(curl "https://edstem.org/api/workspaces/$ED_WORKSPACE_ID/upload" \
         -X POST \
         -H "content-type: application/json" \
@@ -18,6 +20,7 @@ do
 
         curl "https://sahara.au.edstem.org/upload/${ticket}" \
         -X POST \
-        -F upload=@$file_path
+        -F upload=@$file_path \
+          > /dev/null
     fi
 done
