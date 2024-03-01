@@ -150,6 +150,7 @@ body {
         top: inherit !important;
         left: inherit;
         width: inherit;
+        padding-bottom: inherit;
     }
 
     .navbar nav ul {
@@ -210,6 +211,7 @@ body {
 }
 
 .section-impression img {
+    margin-top: 2rem;
     max-width: 460px;
     width: 100%;
     height: auto;
@@ -217,7 +219,7 @@ body {
 }
 
 .section-impression .blurb {
-    padding: 2.5rem 0;
+    margin: 2rem 0;
     font-size: 1.25rem;
 }
 
