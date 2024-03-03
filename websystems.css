@@ -156,13 +156,13 @@ body {
 
     .navbar nav {
         height: 100%;
-        position: inherit;
+        position: unset;
         /* this is bad practice, but needed here */
-        top: inherit !important;
-        left: inherit;
-        width: inherit;
-        padding-bottom: inherit;
-        z-index: inherit;
+        top: unset !important;
+        left: unset;
+        width: unset;
+        padding-bottom: unset;
+        z-index: unset;
     }
 
     .navbar nav ul {
@@ -319,7 +319,7 @@ body {
 }
 
 .bento>*:nth-child(n+3) {
-    top: inherit;
+    top: unset;
     bottom: 0;
 }
 
@@ -372,6 +372,12 @@ body {
     position: absolute;
     bottom: 0;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.bento>*>.bento-text .bento-title a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--primary);
 }
 
 .bento>*>.bento-text .bento-description {

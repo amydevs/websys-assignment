@@ -1,15 +1,19 @@
 - title: Polykey-CLI
   description: A CLI secrets management system that facilitates zero-trust workflows.
+  href: https://github.com/MatrixAI/Polykey-cli
   image: assets/img/polykey.gif
 
 - title: Spinshare Client
   description: Former developer and translator for the SpinShare desktop client built with Vue.js and Electron.
+  href: https://spinsha.re/client
   image: assets/img/spinshare.png
 
 - title: Exalta Launcher
   description: A third-party open-source launcher built in Rust for Realm of the Mad God Exalted.
+  href: https://github.com/amydevs/chip-8-emu-rs
   image: assets/img/exalta.png
 
 - title: Chip-8 Emulator
   description: A Chip-8 Interpretting Emulator Written in Rust.
+  href: https://github.com/amydevs/exalta-launcher
   image: assets/img/chip8.png
