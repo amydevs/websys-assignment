@@ -15,59 +15,21 @@ order: 0
     <h2 class="section-portfolio-title">Portfolio</h2>
     <div class="bento-scroll-wrapper">
         <div class="bento">
-            <div>
-                <div class="bento-text">
-                    <span>
-                        <h3>
-                            Polykey-CLI
-                        </h3>
-                        <p class="bento-description">
-                            A CLI secrets management system that facilitates zero-trust workflows.
-                        </p>
-                    </span>
+            {% for proj in site.data.portfolio %}
+                <div>
+                    <div class="bento-text">
+                        <span>
+                            <h3>
+                                {{ proj.title }}
+                            </h3>
+                            <p class="bento-description">
+                                {{ proj.description }}
+                            </p>
+                        </span>
+                    </div>
+                    <img class="bento-image" src="{{ proj.image }}" />
                 </div>
-                <img class="bento-image" src="assets/img/polykey.gif" />
-            </div>
-            <div>
-                <div class="bento-text">
-                    <span>
-                        <h3>
-                            Spinshare Client
-                        </h3>
-                        <p class="bento-description">
-                            Former developer and translator for the SpinShare desktop client built with Vue.js and
-                            Electron.
-                        </p>
-                    </span>
-                </div>
-                <img class="bento-image" src="assets/img/spinshare.png" />
-            </div>
-            <div>
-                <div class="bento-text">
-                    <span>
-                        <h3>
-                            Exalta Launcher
-                        </h3>
-                        <p class="bento-description">
-                            A third-party open-source launcher built in Rust for Realm of the Mad God Exalted.
-                        </p>
-                    </span>
-                </div>
-                <img class="bento-image" src="assets/img/exalta.png" />
-            </div>
-            <div>
-                <div class="bento-text">
-                    <span>
-                        <h3>
-                            Chip-8 Emulator
-                        </h3>
-                        <p class="bento-description">
-                            A Chip-8 Interpretting Emulator Written in Rust.
-                        </p>
-                    </span>
-                </div>
-                <img class="bento-image" src="assets/img/chip8.png" />
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
