@@ -10,10 +10,10 @@
 
 - title: Exalta Launcher
   description: A third-party open-source launcher built in Rust for Realm of the Mad God Exalted.
-  href: https://github.com/amydevs/chip-8-emu-rs
+  href: https://github.com/amydevs/exalta-launcher
   image: assets/img/exalta.png
 
 - title: Chip-8 Emulator
   description: A Chip-8 Interpretting Emulator Written in Rust.
-  href: https://github.com/amydevs/exalta-launcher
+  href: https://github.com/amydevs/chip-8-emu-rs
   image: assets/img/chip8.png
