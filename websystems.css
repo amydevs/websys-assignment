@@ -220,8 +220,15 @@ body {
     gap: 2rem;
 }
 
-.section-impression img {
+.section-impression > * {
+    margin-bottom: 2rem;
+}
+
+.section-impression > *:first-child {
     margin-top: 2rem;
+}
+
+.section-impression img {
     max-width: 460px;
     width: 100%;
     height: auto;
@@ -229,7 +236,6 @@ body {
 }
 
 .section-impression .blurb {
-    margin: 2rem 0;
     font-size: 1.25rem;
 }
 
