@@ -282,7 +282,7 @@ body {
 
 .section-portfolio-title {
     max-width: var(--content-max-width);
-    width: 100%;
+    width: calc(100% - var(--navbar-padding) * 2);
     padding: 0 var(--navbar-padding);
     margin-left: auto;
     margin-right: auto;
