@@ -12,6 +12,8 @@
     --navbar-height: 5rem;
     --navbar-padding: 2.5rem;
     --content-max-width: 80rem;
+
+    --rounded-border-radius: 0.5rem;
 }
 
 html {
@@ -379,5 +381,8 @@ body {
 @media only screen and (min-width: 768px) {
     .bento-scroll-wrapper {
         margin-bottom: 2.5rem;
+    }
+    .bento-scroll-wrapper {
+        border-radius: var(--rounded-border-radius);
     }
 }
