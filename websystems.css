@@ -142,8 +142,7 @@ body {
     opacity: 1;
 }
 
-/* has selector has only been stable since 2023, be careful! */
-.navbar nav ul:has(li a:focus) .active::after {
+.navbar nav ul:focus-within .active::after {
     opacity: 0;
 }
 
@@ -207,8 +206,7 @@ body {
         opacity: 1;
     }
 
-    /* has selector has only been stable since 2023, be careful! */
-    .navbar nav ul:has(li a:focus) .active::before {
+    .navbar nav ul:focus-within .active::before {
         opacity: 0;
     }
 }
