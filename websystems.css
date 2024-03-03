@@ -281,14 +281,16 @@ body {
 }
 
 .section-portfolio-title {
-    width: var(--content-max-width);
+    max-width: var(--content-max-width);
+    width: 100%;
     padding: 0 var(--navbar-padding);
     margin-left: auto;
     margin-right: auto;
 }
 
 .bento-scroll-wrapper {
-    width: var(--content-max-width);
+    max-width: var(--content-max-width);
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex: 1;
