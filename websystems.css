@@ -255,10 +255,10 @@ body {
 .anchor-scroll-down {
     transition: all 0.10s ease-out;
     --size: 3rem;
-    height: var(--size);
-    width: var(--size);
-    line-height: calc(var(--size) - 0.5rem);
-    font-size: calc(var(--size) / 2);
+    height: 3rem;
+    width: 3rem;
+    line-height: calc(3rem - 0.5rem);
+    font-size: calc(3rem / 2);
     text-align: center;
     border-radius: 100%;
     border: 0.2rem solid var(--primary);
@@ -360,13 +360,12 @@ body {
 }
 
 .bento>*>.bento-text {
-    --bento-text-padding: 1rem;
-    padding: var(--bento-text-padding);
+    padding: 1rem;
+    height: 50%;
+    width: calc(100% - 1rem * 2);
     color: var(--background);
     display: flex;
     align-items: flex-end;
-    height: 50%;
-    width: calc(100% - var(--bento-text-padding) * 2);
     position: absolute;
     bottom: 0;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
@@ -392,12 +391,15 @@ body {
     .section-portfolio {
         justify-content: center;
     }
+
     .bento-scroll-wrapper {
         margin-bottom: 2.5rem;
     }
+
     .bento-scroll-wrapper {
         border-radius: var(--rounded-border-radius);
     }
+
     .bento-scroll-wrapper {
         flex: 0;
     }
