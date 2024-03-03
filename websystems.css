@@ -14,6 +14,10 @@
     --content-max-width: 80rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: var(--background);
     color: var(--text);
@@ -27,6 +31,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 9999;
 }
 
 .navbar {
@@ -211,7 +216,7 @@ body {
 .section-impression {
     min-height: calc(100vh - var(--navbar-height));
     padding: 0 2.5rem;
-    margin-top: var(--navbar-height);
+    padding-top: var(--navbar-height);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -220,11 +225,11 @@ body {
     gap: 2rem;
 }
 
-.section-impression > * {
+.section-impression>* {
     margin-bottom: 2rem;
 }
 
-.section-impression > *:first-child {
+.section-impression>*:first-child {
     margin-top: 2rem;
 }
 
@@ -245,4 +250,126 @@ body {
 
 .section-impression .blurb .name {
     color: var(--primary);
+}
+
+.anchor-scroll-down {
+    transition: all 0.10s ease-out;
+    --size: 3rem;
+    height: var(--size);
+    width: var(--size);
+    line-height: calc(var(--size) - 0.5rem);
+    font-size: calc(var(--size) / 2);
+    text-align: center;
+    border-radius: 100%;
+    border: 0.2rem solid var(--primary);
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.anchor-scroll-down:hover {
+    color: var(--background);
+    background: var(--primary);
+}
+
+.section-portfolio {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.section-portfolio-title {
+    padding: 0 var(--navbar-padding);
+}
+
+.section-portfolio .section-portfolio-content {
+    padding-top: var(--navbar-height);
+}
+
+.bento-scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.bento-scroll-wrapper>.bento {
+    min-width: 768px;
+}
+
+.bento {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.bento>* {
+    transition: all 0.25s ease-out;
+    top: 0;
+    height: 50%;
+    position: absolute;
+    z-index: 0;
+}
+
+.bento>*:nth-child(n+3) {
+    top: inherit;
+    bottom: 0;
+}
+
+.bento>*:nth-child(odd) {
+    left: 0;
+}
+
+.bento>*:nth-child(even) {
+    right: 0;
+}
+
+.bento>*:nth-child(1) {
+    width: 60%;
+}
+
+.bento>*:nth-child(2) {
+    width: 40%;
+}
+
+.bento>*:nth-child(3) {
+    width: 40%;
+}
+
+.bento>*:nth-child(4) {
+    width: 60%;
+    background: yellow;
+}
+
+.bento>*:hover {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.bento>*>.bento-image {
+    object-fit: cover;
+    object-position: left top;
+    height: 100%;
+    width: 100%;
+}
+
+.bento>*>.bento-text {
+    --bento-text-padding: 1rem;
+    padding: var(--bento-text-padding);
+    color: var(--background);
+    display: flex;
+    align-items: flex-end;
+    height: 50%;
+    width: calc(100% - var(--bento-text-padding) * 2);
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.bento>*>.bento-text .bento-description {
+    transition: all 0.25s ease-out;
+    max-height: 0;
+    overflow-y: hidden;
+}
+
+.bento>*:hover>.bento-text .bento-description {
+    max-height: 100vh;
 }
