@@ -303,7 +303,7 @@ body {
 }
 
 .bento>* {
-    transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out, z-index 0.25s cubic-bezier(1, 0, 1, 0);
     top: 0;
     height: 50%;
     position: absolute;
@@ -341,6 +341,7 @@ body {
 }
 
 .bento>*:hover {
+    transition: all 0.25s ease-out, z-index 0.25s cubic-bezier(0, 1, 0, 1);
     height: 100%;
     width: 100%;
     z-index: 1;
