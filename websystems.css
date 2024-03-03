@@ -276,7 +276,6 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     min-height: calc(100vh - var(--navbar-height));
 }
 
@@ -285,12 +284,16 @@ body {
 }
 
 .bento-scroll-wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     overflow-x: auto;
     overflow-y: hidden;
 }
 
 .bento-scroll-wrapper>.bento {
     min-width: 768px;
+    flex: 1;
 }
 
 .bento {
@@ -371,4 +374,10 @@ body {
 
 .bento>*:hover>.bento-text .bento-description {
     max-height: 100vh;
+}
+
+@media only screen and (min-width: 768px) {
+    .bento-scroll-wrapper {
+        margin-bottom: 2.5rem;
+    }
 }
