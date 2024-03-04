@@ -282,6 +282,7 @@ body {
 
 .section-portfolio {
     margin: 0 auto;
+    padding-top: var(--navbar-height);
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - var(--navbar-height));
