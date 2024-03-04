@@ -62,7 +62,6 @@ body {
 
 .navbar .logo a:hover {
     transition: all 0.10s ease-out;
-    font-size: 1.125rem;
     text-decoration: none;
     color: var(--primary);
 }
@@ -270,6 +269,16 @@ body {
     color: var(--background);
     background: var(--primary);
 }
+
+.section-about {
+    max-width: var(--content-max-width);
+    margin-top: var(--navbar-height);
+    margin: 0 auto;
+    padding: 0 var(--navbar-padding);
+    min-height: calc(100vh - var(--navbar-height));
+}
+
+/* past.html */
 
 .section-portfolio {
     margin: 0 auto;

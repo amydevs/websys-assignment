@@ -3,6 +3,25 @@ layout: default
 title: Past
 order: 1
 ---
-<div>
-    
-</div>
+<section id="portfolio" class="section-portfolio">
+    <h2 class="section-portfolio-title">Portfolio</h2>
+    <div class="bento-scroll-wrapper">
+        <div class="bento">
+            {% for proj in site.data.portfolio %}
+                <div>
+                    <div class="bento-text">
+                        <div>
+                            <h3 class="bento-title">
+                                <a href="{{ proj.href }}">{{ proj.title }}</a>
+                            </h3>
+                            <p class="bento-description">
+                                {{ proj.description }}
+                            </p>
+                        </div>
+                    </div>
+                    <img alt="{{ proj.title }} Screenshot" class="bento-image" src="{{ proj.image }}" />
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
