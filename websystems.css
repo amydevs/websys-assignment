@@ -27,6 +27,16 @@ body {
     font-family: 'ui-sans-serif', 'system-ui', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+a {
+    color: var(--primary);
+    text-decoration-color: var(--primary);
+}
+
+a:visited {
+    color: var(--accent);
+    text-decoration: var(--accent);
+}
+
 /* Navbar */
 
 .navbar-fixed-wrapper {
@@ -276,6 +286,86 @@ body {
     margin: 0 auto;
     padding: 0 var(--navbar-padding);
     min-height: calc(100vh - var(--navbar-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-about>* {
+    padding: 2rem 0;
+}
+
+.section-about .section-about-content>* {
+    margin-top: 2rem;
+}
+
+.section-about .section-about-content>*:nth-child(1) {
+    margin-top: 0;
+}
+
+.section-about .section-about-content p {
+    font-size: 1.125rem;
+}
+
+.section-about .section-about-content>div:nth-child(1) img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    aspect-ratio: 1;
+    border-radius: var(--rounded-border-radius);
+}
+
+.section-about .section-about-content>div:nth-child(2) img {
+    /* max-height: 300px; */
+    object-position: center center;
+    width: 100%;
+}
+
+.section-about .section-about-content>div:nth-child(3) img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    aspect-ratio: 1;
+    border-radius: var(--rounded-border-radius);
+}
+
+
+@media only screen and (min-width: 768px) {
+    .section-about .section-about-content>div:nth-child(1) {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .section-about .section-about-content>div:nth-child(1) img {
+        width: unset;
+        height: 300px;
+    }
+
+    .section-about .section-about-content>div:nth-child(2) {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .section-about .section-about-content>div:nth-child(2) img {
+        width: unset;
+    }
+
+    .section-about .section-about-content>div:nth-child(3) {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .section-about .section-about-content>div:nth-child(3) img {
+        width: unset;
+        width: 300px;
+    }
 }
 
 /* past.html */
