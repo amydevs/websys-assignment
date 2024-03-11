@@ -386,10 +386,17 @@ a:visited {
     margin-right: auto;
 }
 
-.bento-scroll-wrapper {
+.bento-position-wrapper {
     max-width: var(--content-max-width);
     width: 100%;
     margin: 0 auto;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.bento-scroll-wrapper {
+    width: 100%;
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -490,6 +497,11 @@ a:visited {
 @media only screen and (min-width: 768px) {
     .section-portfolio {
         justify-content: center;
+    }
+
+    .bento-position-wrapper {
+        padding: 0 var(--navbar-padding);
+        width: calc(100% - var(--navbar-padding) * 2);
     }
 
     .bento-scroll-wrapper {
