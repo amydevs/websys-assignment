@@ -387,12 +387,37 @@ a:visited {
 }
 
 .bento-position-wrapper {
+    position: relative;
     max-width: var(--content-max-width);
     width: 100%;
     margin: 0 auto;
     display: flex;
     flex: 1;
     flex-direction: column;
+    overflow-y: hidden;
+}
+
+.bento-back-button {
+    transition: all 0.25s ease-out, z-index 0.25s cubic-bezier(1, 0, 1, 0);
+    position: absolute;
+    top: -3rem;
+    right: 2.5rem;
+    height: 3rem;
+    width: 3rem;
+    border: none;
+    cursor: pointer;
+    background-image: url("assets/img/back.svg");
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 100%;
+    background-size: 2.5rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 2;
+
+}
+
+*:focus-within~.bento-back-button {
+    top: 2.5rem;
 }
 
 .bento-scroll-wrapper {
@@ -503,6 +528,10 @@ a:visited {
     .bento-position-wrapper {
         padding: 0 var(--navbar-padding);
         width: calc(100% - var(--navbar-padding) * 2);
+    }
+
+    .bento-back-button {
+        right: calc(var(--navbar-padding) + 2.5rem);
     }
 
     .bento-scroll-wrapper {
