@@ -506,14 +506,8 @@ a:visited {
     }
 
     .bento-scroll-wrapper {
-        margin-bottom: 2.5rem;
-    }
-
-    .bento-scroll-wrapper {
         border-radius: var(--rounded-border-radius);
-    }
-
-    .bento-scroll-wrapper {
+        margin-bottom: 2.5rem;
         flex: 0;
     }
 }
