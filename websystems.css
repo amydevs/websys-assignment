@@ -478,7 +478,9 @@ a:visited {
     width: 60%;
 }
 
-.bento>*:focus {
+/* This also needs to be focus-within, because the link might be clicked on */
+.bento>*:focus,
+.bento>*:focus-within {
     transition: all 0.25s ease-out, z-index 0.25s cubic-bezier(0, 1, 0, 1);
     height: 100%;
     width: 100%;
