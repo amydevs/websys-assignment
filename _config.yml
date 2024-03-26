@@ -5,6 +5,8 @@ theme: null
 sass:
   style: expanded
   sourcemap: never
+jekyll_tidy:
+  exclude: ["websystems.scss"]
 plugins:
   - jekyll-tidy
 exclude:
