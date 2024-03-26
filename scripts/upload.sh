@@ -1,7 +1,7 @@
 #!/bin/sh
 
 site_path="./_site/"
-upload_dir="/home/"
+upload_dir="/home/websystems/"
 
 abs_site_path=$(readlink -f $site_path)
 abs_site_path_length=${#abs_site_path}
