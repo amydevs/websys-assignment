@@ -28,6 +28,11 @@ mkShell {
     }
     mkdir --parents "$(pwd)/tmp"
 
+    export BUNDLE_PATH=vendor
+    export BUNDLE_CACHE_ALL=true
+    export BUNDLE_NO_INSTALL=true
+    export BUNDLE_FORCE_RUBY_PLATFORM=true
+
     alias jekyll='bundler exec jekyll'
 
     set +v
