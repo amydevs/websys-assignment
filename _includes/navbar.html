@@ -10,6 +10,9 @@
             <ul>
                 {% for node in sorted_pages %}
                     {%- assign page_url = node.path -%}
+                    {%- if page_url == "websystems.scss" -%}
+                        {%- continue -%}
+                    {%- endif -%}
                     {%- if page.url == node.url -%}
                         <li class="active"><a href="{{ page_url }}">{{node.title}}</a></li>
                     {%- else -%}

@@ -1,40 +1,38 @@
-:root {
-    --primary: #d61b69;
-    --secondary: #ffa3c9;
-    --accent: #c52b6b;
-    --success: #28a745;
-    --info: #17a2b8;
-    --warning: #ffc107;
-    --danger: #dc3545;
-    --text: #050315;
-    --background: #fbfbfe;
+$primary: #d61b69;
+$secondary: #ffa3c9;
+$accent: #c52b6b;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$text: #050315;
+$background: #fbfbfe;
 
-    --navbar-height: 5rem;
-    --navbar-padding: 2.5rem;
-    --content-max-width: 80rem;
+$navbar-height: 5rem;
+$navbar-padding: 2.5rem;
+$content-max-width: 80rem;
 
-    --rounded-border-radius: 0.5rem;
-}
+$rounded-border-radius: 0.5rem;
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background: var(--background);
-    color: var(--text);
+    background: $background;
+    color: $text;
     margin: 0;
     font-family: 'ui-sans-serif', 'system-ui', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 a {
-    color: var(--primary);
-    text-decoration-color: var(--primary);
+    color: $primary;
+    text-decoration-color: $primary;
 }
 
 a:visited {
-    color: var(--accent);
-    text-decoration: var(--accent);
+    color: $accent;
+    text-decoration: $accent;
 }
 
 /* Navbar */
@@ -52,28 +50,28 @@ a:visited {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: var(--navbar-height);
-    max-width: var(--content-max-width);
+    height: $navbar-height;
+    max-width: $content-max-width;
     margin: 0 auto;
-    padding: 0 var(--navbar-padding);
-    background: var(--background);
+    padding: 0 $navbar-padding;
+    background: $background;
 }
 
 .navbar .exclamation {
-    color: var(--primary);
+    color: $primary;
 }
 
 .navbar .logo a {
     transition: all 0.10s ease-out;
     font-size: 1.125rem;
     text-decoration: none;
-    color: var(--text);
+    color: $text;
 }
 
 .navbar .logo a:hover {
     transition: all 0.10s ease-out;
     text-decoration: none;
-    color: var(--primary);
+    color: $primary;
 }
 
 .navbar nav ul {
@@ -84,7 +82,7 @@ a:visited {
 
 .navbar nav ul li a {
     text-decoration: none;
-    color: var(--text);
+    color: $text;
 }
 
 .navbar #navbar-dropdown-checkbox {
@@ -92,7 +90,7 @@ a:visited {
 }
 
 .navbar nav {
-    background: var(--background);
+    background: $background;
 }
 
 /* Mobile stuff */
@@ -109,16 +107,16 @@ a:visited {
 }
 
 .navbar #navbar-dropdown-checkbox:checked~nav {
-    top: var(--navbar-height);
+    top: $navbar-height;
 }
 
 .navbar nav {
     transition: all 0.10s ease-out;
     position: absolute;
     left: 0;
-    top: calc(-100% - var(--navbar-padding) / 2);
+    top: calc(-100% - #{$navbar-padding} / 2);
     width: 100%;
-    padding-bottom: calc(var(--navbar-padding) / 2);
+    padding-bottom: calc(#{$navbar-padding} / 2);
     z-index: -1;
 }
 
@@ -127,8 +125,8 @@ a:visited {
 }
 
 .navbar nav ul li a {
-    padding: 0 var(--navbar-padding);
-    line-height: var(--navbar-padding);
+    padding: 0 $navbar-padding;
+    line-height: $navbar-padding;
     display: block;
 }
 
@@ -136,9 +134,9 @@ a:visited {
     transition: all 0.10s ease-out;
     position: absolute;
     top: 50%;
-    right: calc(var(--navbar-padding) + 0.5rem);
+    right: calc(#{$navbar-padding} + 0.5rem);
     transform: translateY(-50%);
-    background: var(--primary);
+    background: $primary;
     width: 10px;
     height: 10px;
     content: "";
@@ -203,7 +201,7 @@ a:visited {
         left: 50%;
         bottom: 0;
         transform: translateX(-50%);
-        background: var(--primary);
+        background: $primary;
         width: 100%;
         height: 5px;
         content: "";
@@ -223,9 +221,9 @@ a:visited {
 /* index.html */
 
 .section-impression {
-    min-height: calc(100vh - var(--navbar-height));
+    min-height: calc(100vh - #{$navbar-height});
     padding: 0 2.5rem;
-    padding-top: var(--navbar-height);
+    padding-top: $navbar-height;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -258,34 +256,34 @@ a:visited {
 }
 
 .section-impression .blurb .name {
-    color: var(--primary);
+    color: $primary;
 }
 
 .anchor-scroll-down {
     transition: all 0.10s ease-out;
-    --size: 3rem;
+    $size: 3rem;
     height: 3rem;
     width: 3rem;
     line-height: calc(3rem - 0.5rem);
     font-size: calc(3rem / 2);
     text-align: center;
     border-radius: 100%;
-    border: 0.2rem solid var(--primary);
-    color: var(--primary);
+    border: 0.2rem solid $primary;
+    color: $primary;
     text-decoration: none;
 }
 
 .anchor-scroll-down:hover {
-    color: var(--background);
-    background: var(--primary);
+    color: $background;
+    background: $primary;
 }
 
 .section-about {
-    max-width: var(--content-max-width);
-    margin-top: var(--navbar-height);
+    max-width: $content-max-width;
+    margin-top: $navbar-height;
     margin: 0 auto;
-    padding: 0 var(--navbar-padding);
-    min-height: calc(100vh - var(--navbar-height));
+    padding: 0 $navbar-padding;
+    min-height: calc(100vh - #{$navbar-height});
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -312,7 +310,7 @@ a:visited {
     object-fit: cover;
     object-position: center center;
     aspect-ratio: 1;
-    border-radius: var(--rounded-border-radius);
+    border-radius: $rounded-border-radius;
 }
 
 .section-about .section-about-content>div:nth-child(2) img {
@@ -326,7 +324,7 @@ a:visited {
     object-fit: cover;
     object-position: center center;
     aspect-ratio: 1;
-    border-radius: var(--rounded-border-radius);
+    border-radius: $rounded-border-radius;
 }
 
 
@@ -372,23 +370,23 @@ a:visited {
 
 .section-portfolio {
     margin: 0 auto;
-    padding-top: var(--navbar-height);
+    padding-top: $navbar-height;
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - var(--navbar-height));
+    min-height: calc(100vh - #{$navbar-height});
 }
 
 .section-portfolio-title {
-    max-width: var(--content-max-width);
-    width: calc(100% - var(--navbar-padding) * 2);
-    padding: 0 var(--navbar-padding);
+    max-width: $content-max-width;
+    width: calc(100% - #{$navbar-padding} * 2);
+    padding: 0 $navbar-padding;
     margin-left: auto;
     margin-right: auto;
 }
 
 .bento-position-wrapper {
     position: relative;
-    max-width: var(--content-max-width);
+    max-width: $content-max-width;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -498,7 +496,7 @@ a:visited {
     padding: 1rem;
     height: 50%;
     width: calc(100% - 1rem * 2);
-    color: var(--background);
+    color: $background;
     display: flex;
     align-items: flex-end;
     position: absolute;
@@ -509,7 +507,7 @@ a:visited {
 .bento>*>.bento-text .bento-title a {
     color: inherit;
     text-decoration: underline;
-    text-decoration-color: var(--primary);
+    text-decoration-color: $primary;
 }
 
 .bento>*>.bento-text .bento-description {
@@ -529,16 +527,16 @@ a:visited {
     }
 
     .bento-position-wrapper {
-        padding: 0 var(--navbar-padding);
-        width: calc(100% - var(--navbar-padding) * 2);
+        padding: 0 $navbar-padding;
+        width: calc(100% - #{$navbar-padding} * 2);
     }
 
     .bento-back-button {
-        right: calc(var(--navbar-padding) + 2.5rem);
+        right: calc(#{$navbar-padding} + 2.5rem);
     }
 
     .bento-scroll-wrapper {
-        border-radius: var(--rounded-border-radius);
+        border-radius: $rounded-border-radius;
         margin-bottom: 2.5rem;
         flex: 0;
     }
