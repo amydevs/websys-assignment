@@ -1,4 +1,4 @@
 import (
-  let rev = "ea5234e7073d5f44728c499192544a84244bf35a"; in
+  let rev = "b4372c4924d9182034066c823df76d6eaf1f4ec4"; in
   builtins.fetchTarball "https://github.com/NixOS/nixpkgs/archive/${rev}.tar.gz"
 )
