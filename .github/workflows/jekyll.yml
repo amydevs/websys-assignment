@@ -68,6 +68,7 @@ jobs:
     environment:
       name: ed
     env:
+      ED_CHALLENGE_ID: ${{ secrets.ED_CHALLENGE_ID }}
       ED_WORKSPACE_ID: ${{ secrets.ED_WORKSPACE_ID }}
       ED_API_TOKEN: ${{ secrets.ED_API_TOKEN }}
     runs-on: ubuntu-latest
@@ -86,4 +87,9 @@ jobs:
         run: |
           chmod +x ./scripts/upload.sh
           ./scripts/upload.sh
+        shell: bash
+      - name: Update Ed Permissions
+        run: |
+          chmod +x ./scripts/update-permissions.sh
+          ./scripts/update-permissions.sh
         shell: bash
