@@ -85,7 +85,7 @@ jobs:
         run: tar -xvf ./github-pages/artifact.tar --one-top-level=./_site
       - name: Install Websocat
         run: |
-          curl https://github.com/vi/websocat/releases/download/v1.11.0/websocat_max.x86_64-unknown-linux-musl --output ./websocat
+          curl https://github.com/vi/websocat/releases/download/v1.11.0/websocat_max.x86_64-unknown-linux-musl -L --output ./websocat
           chmod +x ./websocat
           pwd >> $GITHUB_PATH
       - name: Upload to Ed
