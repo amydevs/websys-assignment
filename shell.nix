@@ -36,6 +36,12 @@ mkShell {
 
     alias jekyll='bundler exec jekyll'
 
+    bundle install
+    
+    patchelf \
+      --set-interpreter ${binutils.dynamicLinker} \
+      "$(bundle show sass-embedded)/ext/sass/dart-sass/src/dart"
+
     set +v
   '';
 }

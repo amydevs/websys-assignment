@@ -4,6 +4,5 @@ gem "jekyll"
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 group :jekyll_plugins do
-  gem "jekyll-sass-converter", "< 3.0.0"
   gem "jekyll-tidy"
 end
