@@ -8,7 +8,7 @@ connect_return=$(curl "https://edstem.org/api/challenges/$ED_CHALLENGE_ID/connec
 )
 ticket=$(echo $connect_return | jq -r '.ticket')
 
-runscript() {
+socketscript() {
     upload_dir="/home/websystems/"
     command="chmod -R o+x $upload_dir"
     read -r output
@@ -30,9 +30,10 @@ runscript() {
     # kill websocat, even if the websocket doesn't get closed
     kill "$PPID"
 }
-export -f runscript
+
+export -f socketscript
 
 websocat "wss://sahara.au.edstem.org/connect/${ticket}" \
     --text \
-    sh-c:'exec bash -c runscript'
+    sh-c:'exec bash -c socketscript'
 wait
