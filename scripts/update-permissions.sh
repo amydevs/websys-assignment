@@ -13,7 +13,6 @@ runscript() {
     command="chmod -R o+x $upload_dir"
     read -r output
     read -r output
-    echo "$output" >&2
 
     echo "{\"type\":\"program_open\",\"data\":{\"id\":\"term-$$\",\"command\":\"bash --login\",\"pty_size\":{},\"start_if_stopped\":true}}"
     read -r output
