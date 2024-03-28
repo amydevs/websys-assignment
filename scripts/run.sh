@@ -38,7 +38,7 @@ run_return=$(
         -X POST \
         -H "content-type: application/json" \
         -H "Authorization: $ED_API_TOKEN" \
-        --data-raw "{\"pty_size\":{\"cols\":87,\"rows\":14},\"hash\":\"$hash\",\"command\":\"\",\"dump_files\":true,\"user_id\":null,\"password\":\"\",\"i\":null,\"is_check\":true}"
+        --data-raw "{\"pty_size\":{\"cols\":999,\"rows\":999},\"hash\":\"$hash\",\"command\":\"\",\"dump_files\":true,\"user_id\":null,\"password\":\"\",\"i\":null,\"is_check\":true}"
 )
 
 run_ticket=$(echo $run_return | jq -r '.ticket')
