@@ -26,7 +26,7 @@ runscript() {
 
     echo "{\"type\":\"program_data\",\"data\":{\"id\":\"term-$$\",\"data\":\"$(echo "exit" | base64)\"}}"
     read -r output
-
+    
     # kill websocat, even if the websocket doesn't get closed
     kill "$PPID"
 }
@@ -35,3 +35,5 @@ export -f runscript
 websocat "wss://sahara.au.edstem.org/connect/${ticket}" \
     --text \
     sh-c:'exec bash -c runscript'
+
+wait
