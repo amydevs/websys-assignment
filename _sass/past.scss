@@ -1,0 +1,175 @@
+/* past.html */
+
+.section-portfolio {
+    margin: 0 auto;
+    padding-top: $navbar-height;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - $navbar-height);
+}
+
+.section-portfolio-title {
+    max-width: $content-max-width;
+    width: calc(100% - $navbar-padding * 2);
+    padding: 0 $navbar-padding;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bento-position-wrapper {
+    position: relative;
+    max-width: $content-max-width;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.bento-back-button {
+    transition: all 0.25s ease-out, z-index 0.25s cubic-bezier(1, 0, 1, 0);
+    position: absolute;
+    top: -3rem;
+    right: 2.5rem;
+    height: 3rem;
+    width: 3rem;
+    border: none;
+    cursor: pointer;
+    background-image: url("assets/img/back.svg");
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 100%;
+    background-size: 2.5rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 2;
+
+}
+
+*:focus-within~.bento-back-button {
+    top: 2.5rem;
+}
+
+.bento-scroll-wrapper {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.bento-scroll-wrapper>.bento {
+    min-width: 768px;
+    flex: 1;
+}
+
+.bento {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.bento>* {
+    transition: all 0.25s ease-out, z-index 0.25s cubic-bezier(1, 0, 1, 0);
+    top: 0;
+    height: 50%;
+    position: absolute;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.bento>*:nth-child(n+3) {
+    top: unset;
+    bottom: 0;
+}
+
+.bento>*:nth-child(odd) {
+    left: 0;
+}
+
+.bento>*:nth-child(even) {
+    right: 0;
+}
+
+.bento>*:nth-child(1) {
+    width: 60%;
+}
+
+.bento>*:nth-child(2) {
+    width: 40%;
+}
+
+.bento>*:nth-child(3) {
+    width: 40%;
+}
+
+.bento>*:nth-child(4) {
+    width: 60%;
+}
+
+/* This also needs to be focus-within, because the link might be clicked on */
+.bento>*:focus,
+.bento>*:focus-within {
+    transition: all 0.25s ease-out, z-index 0.25s cubic-bezier(0, 1, 0, 1);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.bento>*>.bento-image {
+    object-fit: cover;
+    object-position: left top;
+    height: 100%;
+    width: 100%;
+}
+
+.bento>*>.bento-text {
+    padding: 1rem;
+    height: 50%;
+    width: calc(100% - 1rem * 2);
+    color: $background;
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.bento>*>.bento-text .bento-title a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: $primary;
+}
+
+.bento>*>.bento-text .bento-description {
+    transition: all 0.25s ease-out;
+    max-height: 0;
+    overflow-y: hidden;
+    cursor: text;
+}
+
+.bento>*:focus>.bento-text .bento-description {
+    max-height: 100vh;
+}
+
+@media only screen and (min-width: 768px) {
+    .section-portfolio {
+        justify-content: center;
+    }
+
+    .bento-position-wrapper {
+        padding: 0 $navbar-padding;
+        width: calc(100% - $navbar-padding * 2);
+    }
+
+    .bento-back-button {
+        right: calc($navbar-padding + 2.5rem);
+    }
+
+    .bento-scroll-wrapper {
+        border-radius: $rounded-border-radius;
+        margin-bottom: 2.5rem;
+        flex: 0;
+    }
+}
