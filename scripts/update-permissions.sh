@@ -28,13 +28,11 @@ socketscript() {
     echo "{\"type\":\"program_data\",\"data\":{\"id\":\"term-$$\",\"data\":\"$(echo "exit" | base64)\"}}"
     read -r
     echo "Closed Terminal $$" >&2
-    
-    # kill websocat, even if the websocket doesn't get closed
-    kill "$PPID"
 }
 
 socketscriptstring=$(declare -f socketscript)
 
 websocat "wss://sahara.au.edstem.org/connect/${ticket}" \
     --text \
+    --exit-on-eof \
     sh-c:"exec bash -c '$socketscriptstring; socketscript'"
