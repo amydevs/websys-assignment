@@ -4,9 +4,9 @@ with pkgs;
 mkShell {
   nativeBuildInputs = [
     ruby.devEnv
-    git
     pkg-config
-    bundix
+    patchelf
+    git
     jq
     websocat
   ];
