@@ -8,8 +8,19 @@ connect_return=$(curl "https://edstem.org/api/challenges/$ED_CHALLENGE_ID/connec
 )
 ticket=$(echo $connect_return | jq -r '.ticket')
 
-rm -rf hashpipe
-mkfifo hashpipe
+tmpdir=
+cleanup () {
+  trap - EXIT
+  if [ -n "$tmpdir" ] ; then rm -rf "$tmpdir"; fi
+  if [ -n "$1" ]; then trap - $1; kill -$1 $$; fi
+}
+tmpdir=$(mktemp -d)
+trap 'cleanup' EXIT
+trap 'cleanup HUP' HUP
+trap 'cleanup TERM' TERM
+trap 'cleanup INT' INT
+
+mkfifo "$tmpdir/hashpipe"
 
 socketscript() {
     read -r
@@ -18,7 +29,7 @@ socketscript() {
 
     echo "{\"type\":\"commit\",\"data\":{\"id\":\"|$(date +%s%N | cut -b1-13)\"}}"
     read -r output
-    echo $output | jq -r '.data.commit.hash' > hashpipe
+    echo $output | jq -r '.data.commit.hash' > "$1"
 }
 
 socketscriptstring=$(declare -f socketscript)
@@ -27,11 +38,9 @@ hash=$(
     websocat "wss://sahara.au.edstem.org/connect/${ticket}" \
         --text \
         --exit-on-eof \
-        sh-c:"exec bash -c '$socketscriptstring; socketscript'" &
-        cat hashpipe
+        sh-c:"exec bash -c '$socketscriptstring; socketscript $tmpdir/hashpipe'" &
+        cat "$tmpdir/hashpipe"
 )
-
-rm -rf hashpipe
 
 run_return=$(
     curl "https://edstem.org/api/challenges/$ED_CHALLENGE_ID/run" \
@@ -43,18 +52,15 @@ run_return=$(
 
 run_ticket=$(echo $run_return | jq -r '.ticket')
 
-rm -rf endpipe
-mkfifo endpipe
+mkfifo "$tmpdir/endpipe"
 
-cat endpipe |
+cat "$tmpdir/endpipe" |
 websocat "wss://sahara.au.edstem.org/run?ticket=${run_ticket}" --text --exit-on-eof |
     while read line; do
         type=$(echo $line | jq -r '.type')
         if [ "$type" == "run_exit" ]; then 
-            echo > endpipe
+            echo > $tmpdir/endpipe
         elif [ "$type" == "run_frame" ]; then
             echo $line | jq -r '.data.data' | base64 --decode
         fi;
     done;
-
-rm -rf endpipe
