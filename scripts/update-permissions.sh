@@ -34,5 +34,5 @@ export -f runscript
 
 websocat "wss://sahara.au.edstem.org/connect/${ticket}" \
     --text \
-    sh-c:'bash -c runscript'
+    sh-c:'exec bash -c runscript'
 wait
