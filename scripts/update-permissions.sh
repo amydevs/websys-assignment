@@ -11,29 +11,30 @@ ticket=$(echo $connect_return | jq -r '.ticket')
 socketscript() {
     upload_dir="/home/websystems/"
     command="chmod -R o+x $upload_dir"
-    read -r output
-    read -r output
+    read -r
+    read -r
+    echo "Started Session" >&2
 
     echo "{\"type\":\"program_open\",\"data\":{\"id\":\"term-$$\",\"command\":\"bash --login\",\"pty_size\":{},\"start_if_stopped\":true}}"
-    read -r output
-    echo "$output" >&2
-    read -r output
-    read -r output
+    read -r
+    read -r
+    read -r
+    echo "Opened Terminal $$" >&2
 
     echo "{\"type\":\"program_data\",\"data\":{\"id\":\"term-$$\",\"data\":\"$(echo $command | base64)\"}}"
-    read -r output
-    echo "$output" >&2
+    read -r
+    echo "Sent \"$command\"" >&2
 
     echo "{\"type\":\"program_data\",\"data\":{\"id\":\"term-$$\",\"data\":\"$(echo "exit" | base64)\"}}"
-    read -r output
+    read -r
+    echo "Closed Terminal $$" >&2
     
     # kill websocat, even if the websocket doesn't get closed
     kill "$PPID"
 }
 
-export -f socketscript
+socketscriptstring=$(declare -f socketscript)
 
 websocat "wss://sahara.au.edstem.org/connect/${ticket}" \
     --text \
-    sh-c:'exec bash -c socketscript'
-wait
+    sh-c:"exec bash -c '$socketscriptstring; socketscript'"
