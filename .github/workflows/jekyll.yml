@@ -87,7 +87,7 @@ jobs:
         run: |
           curl https://github.com/vi/websocat/releases/download/v1.11.0/websocat_max.x86_64-unknown-linux-musl --output ./websocat
           chmod +x ./websocat
-          export PATH="$(pwd):$PATH"
+          pwd >> $GITHUB_PATH
       - name: Upload to Ed
         run: |
           chmod +x ./scripts/upload.sh
