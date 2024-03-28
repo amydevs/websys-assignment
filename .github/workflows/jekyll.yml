@@ -90,6 +90,8 @@ jobs:
         shell: bash
       - name: Update Ed Permissions
         run: |
+          sudo apt-get update
+          sudo apt-get install websocat
           chmod +x ./scripts/update-permissions.sh
           ./scripts/update-permissions.sh
         shell: bash
