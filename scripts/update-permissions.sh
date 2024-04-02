@@ -4,7 +4,7 @@ connect_return=$(curl "https://edstem.org/api/challenges/$ED_CHALLENGE_ID/connec
     -X POST \
     -H "content-type: application/json" \
     -H "Authorization: $ED_API_TOKEN" \
-    --data-raw "{\"user_id\":null,\"password\":\"\",\"i\":null}"
+    --data-raw "{\"user_id\":null,\"password\":\"\",\"i\":null}" 2> /dev/null
 )
 ticket=$(echo $connect_return | jq -r '.ticket')
 

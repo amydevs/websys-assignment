@@ -25,7 +25,7 @@ do
         curl "https://sahara.au.edstem.org/upload/${ticket}" \
             -X POST \
             -F upload=@$file_path \
-            > /dev/null
+            2> /dev/null
 
         relative_file=$(echo $file_path | cut -c $(($abs_site_path_length+1))-)
         dest_file=$(readlink -m $upload_dir/${relative_file})
