@@ -27,6 +27,11 @@
     overflow-y: hidden;
 }
 
+.bento-position-wrapper .bento {
+    flex: 1;
+    width: 100%;
+}
+
 .bento-back-button {
     transition: all 0.25s ease-out, z-index 0.25s cubic-bezier(1, 0, 1, 0);
     position: absolute;
@@ -50,15 +55,6 @@
     top: 2.5rem;
 }
 
-.bento-scroll-wrapper {
-    width: 100%;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
 .bento-scroll-wrapper>.bento {
     min-width: 768px;
     flex: 1;
@@ -66,8 +62,6 @@
 
 .bento {
     position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
 }
 
 .bento>* {
@@ -93,19 +87,19 @@
 }
 
 .bento>*:nth-child(1) {
-    width: 60%;
+    width: 55%;
 }
 
 .bento>*:nth-child(2) {
-    width: 40%;
+    width: 45%;
 }
 
 .bento>*:nth-child(3) {
-    width: 40%;
+    width: 45%;
 }
 
 .bento>*:nth-child(4) {
-    width: 60%;
+    width: 55%;
 }
 
 /* This also needs to be focus-within, because the link might be clicked on */
@@ -160,16 +154,11 @@
 
     .bento-position-wrapper {
         padding: 0 $navbar-padding;
+        padding-bottom: $navbar-padding; 
         width: calc(100% - $navbar-padding * 2);
     }
 
     .bento-back-button {
         right: calc($navbar-padding + 2.5rem);
-    }
-
-    .bento-scroll-wrapper {
-        border-radius: $rounded-border-radius;
-        margin-bottom: 2.5rem;
-        flex: 0;
     }
 }
