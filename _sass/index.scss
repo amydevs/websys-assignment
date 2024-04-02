@@ -89,21 +89,20 @@
     width: 100%;
     object-fit: cover;
     object-position: center center;
-    aspect-ratio: 1;
     border-radius: $rounded-border-radius;
 }
 
 .section-about .section-about-content>div:nth-child(2) img {
-    /* max-height: 300px; */
-    object-position: center center;
     width: 100%;
+    height: auto;
+    object-position: center center;
 }
 
 .section-about .section-about-content>div:nth-child(3) img {
+    height: auto;
     width: 100%;
     object-fit: cover;
     object-position: center center;
-    aspect-ratio: 1;
     border-radius: $rounded-border-radius;
 }
 
