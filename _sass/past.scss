@@ -23,13 +23,14 @@
     margin: 0 auto;
     display: flex;
     flex: 1;
-    flex-direction: column;
     overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
 }
 
 .bento-position-wrapper .bento {
     flex: 1;
-    width: 100%;
+    min-height: calc($content-max-width * 9/16);
 }
 
 .bento-back-button {
@@ -159,7 +160,7 @@
     }
 
     .bento-position-wrapper .bento {
-        max-height: calc($content-max-width * 9/16);
+        height: calc($content-max-width * 9/16);
     }
 
     .bento-back-button {
