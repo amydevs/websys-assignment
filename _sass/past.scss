@@ -158,6 +158,10 @@
         width: calc(100% - $navbar-padding * 2);
     }
 
+    .bento-position-wrapper .bento {
+        max-height: calc($content-max-width * 9/16);
+    }
+
     .bento-back-button {
         right: calc($navbar-padding + 2.5rem);
     }
