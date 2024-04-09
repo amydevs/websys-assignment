@@ -6,4 +6,7 @@
     padding-top: $navbar-height;
     min-height: calc(100vh - $navbar-height);
     max-width: $content-max-width;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
