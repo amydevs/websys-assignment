@@ -1,0 +1,9 @@
+/* future.html */
+
+.section-future {
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    padding-top: $navbar-height;
+    min-height: calc(100vh - $navbar-height);
+    max-width: $content-max-width;
+}
