@@ -39,24 +39,24 @@
     color: $primary;
 }
 
-.anchor-scroll-down {
-    transition: all 0.10s ease-out;
-    $size: 3rem;
-    height: 3rem;
-    width: 3rem;
-    line-height: calc(3rem - 0.5rem);
-    font-size: calc(3rem / 2);
-    text-align: center;
-    border-radius: 100%;
-    border: 0.2rem solid $primary;
-    color: $primary;
-    text-decoration: none;
-}
+// .anchor-scroll-down {
+//     transition: all 0.10s ease-out;
+//     $size: 3rem;
+//     height: 3rem;
+//     width: 3rem;
+//     line-height: calc(3rem - 0.5rem);
+//     font-size: calc(3rem / 2);
+//     text-align: center;
+//     border-radius: 100%;
+//     border: 0.2rem solid $primary;
+//     color: $primary;
+//     text-decoration: none;
+// }
 
-.anchor-scroll-down:hover {
-    color: $background;
-    background: $primary;
-}
+// .anchor-scroll-down:hover {
+//     color: $background;
+//     background: $primary;
+// }
 
 .section-about {
     max-width: $content-max-width;

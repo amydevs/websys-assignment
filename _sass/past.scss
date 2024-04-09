@@ -1,5 +1,16 @@
 /* past.html */
 
+.section-experience {
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    padding-top: $navbar-height;
+    min-height: calc(100vh - $navbar-height);
+    max-width: $content-max-width;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .section-portfolio {
     margin: 0 auto;
     padding-top: $navbar-height;
