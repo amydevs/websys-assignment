@@ -41,7 +41,7 @@
 
 .bento-position-wrapper .bento {
     flex: 1;
-    min-height: calc($content-max-width * 9/16);
+    max-height: calc($content-max-width * 9/16);
 }
 
 .bento-back-button {

@@ -10,38 +10,43 @@ order: 1
             I've been programming for more than half a decade, working on Free and Open Source projects on GitHub.
         </p>
         <p>
-            One notable team of which I was apart of was <a href="https://spinsha.re">SpinShare</a>, which worked on a level-hosting service for the video game Spin rhythm XD.
+            One notable team of which I was apart of was <a href="https://spinsha.re">SpinShare</a>, which worked on a
+            level-hosting service for the video game Spin rhythm XD.
         </p>
         <p>
             I've been working as a Software Engineer at <a href="https://matrix.ai">Matrix AI</a> for about a year.
         </p>
         <p>
             While I've been there I worked on:
-            <ul>
-                <li>
-                    <a href="https://github.com/MatrixAI/Polykey-CLI">Polykey-CLI</a> - A P2P secrets management system that facilitates zero-trust workflows
-                </li>
-                <li>
-                    <a href="https://github.com/MatrixAI/js-mdns">js-mdns</a> - An MDNS responder written in TypeScript for Node.js
-                </li>
-                <li>
-                    <a href="https://github.com/MatrixAI/js-ws">js-ws</a> - A WebStream compliant interface to the ws library.
-                </li>
-            </ul>            
+        <ul>
+            <li>
+                <a href="https://github.com/MatrixAI/Polykey-CLI">Polykey-CLI</a> - A P2P secrets management system that
+                facilitates zero-trust workflows
+            </li>
+            <li>
+                <a href="https://github.com/MatrixAI/js-mdns">js-mdns</a> - An MDNS responder written in TypeScript for
+                Node.js
+            </li>
+            <li>
+                <a href="https://github.com/MatrixAI/js-ws">js-ws</a> - A WebStream compliant interface to the ws
+                library.
+            </li>
+        </ul>
         </p>
         <p>
             My favourite programming languages over the years have been:
-            <ol>
-                <li>
-                    Rust - The memory-safety and thread-safety abstractions are magical.
-                </li>
-                <li>
-                    JavaScript - I've been using React for too long for it to not grow on me.
-                </li>
-                <li>
-                    Nix - The documentation is so bad but reproducable declarative system and development environment configuration is so good.
-                </li>
-            </ol>
+        <ol>
+            <li>
+                Rust - The memory-safety and thread-safety abstractions are magical.
+            </li>
+            <li>
+                JavaScript - I've been using React for too long for it to not grow on me.
+            </li>
+            <li>
+                Nix - The documentation is so bad but reproducable declarative system and development environment
+                configuration is so good.
+            </li>
+        </ol>
         </p>
     </div>
 </section>
@@ -50,19 +55,19 @@ order: 1
     <div class="bento-position-wrapper">
         <div class="bento">
             {% for proj in site.data.portfolio %}
-                <div tabindex="0">
-                    <div class="bento-text">
-                        <div>
-                            <h3 class="bento-title">
-                                <a href="{{ proj.href }}">{{ proj.title }}</a>
-                            </h3>
-                            <p class="bento-description">
-                                {{ proj.description }}
-                            </p>
-                        </div>
+            <div tabindex="0">
+                <div class="bento-text">
+                    <div>
+                        <h3 class="bento-title">
+                            <a href="{{ proj.href }}">{{ proj.title }}</a>
+                        </h3>
+                        <p class="bento-description">
+                            {{ proj.description }}
+                        </p>
                     </div>
-                    <img alt="{{ proj.title }} Screenshot" class="bento-image" src="{{ proj.image }}" />
                 </div>
+                <img alt="{{ proj.title }} Screenshot" class="bento-image" src="{{ proj.image }}" />
+            </div>
             {% endfor %}
         </div>
         <button class="bento-back-button"></button>
