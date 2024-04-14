@@ -44,28 +44,28 @@
     max-height: calc($content-max-width * 9/16);
 }
 
-.bento-back-button {
-    transition: all 0.25s ease-out, z-index 0.25s cubic-bezier(1, 0, 1, 0);
-    position: absolute;
-    top: -3rem;
-    right: 2.5rem;
-    height: 3rem;
-    width: 3rem;
-    border: none;
-    cursor: pointer;
-    background-image: url("assets/img/back.svg");
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 100%;
-    background-size: 2.5rem;
-    background-position: center center;
-    background-repeat: no-repeat;
-    z-index: 2;
+// .bento-back-button {
+//     transition: all 0.25s ease-out, z-index 0.25s cubic-bezier(1, 0, 1, 0);
+//     position: absolute;
+//     top: -3rem;
+//     right: 2.5rem;
+//     height: 3rem;
+//     width: 3rem;
+//     border: none;
+//     cursor: pointer;
+//     background-image: url("assets/img/back.svg");
+//     background-color: rgba(0, 0, 0, 0.6);
+//     border-radius: 100%;
+//     background-size: 2.5rem;
+//     background-position: center center;
+//     background-repeat: no-repeat;
+//     z-index: 2;
 
-}
+// }
 
-*:focus-within~.bento-back-button {
-    top: 2.5rem;
-}
+// *:hover~.bento-back-button {
+//     top: 2.5rem;
+// }
 
 .bento-scroll-wrapper>.bento {
     min-width: 768px;
@@ -114,9 +114,8 @@
     width: 55%;
 }
 
-/* This also needs to be focus-within, because the link might be clicked on */
-.bento>*:focus,
-.bento>*:focus-within {
+/* This also needs to be hover, because the link might be clicked on */
+.bento>*:hover {
     transition: all 0.25s ease-out, z-index 0.25s cubic-bezier(0, 1, 0, 1);
     height: 100%;
     width: 100%;
