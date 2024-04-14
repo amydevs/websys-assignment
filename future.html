@@ -38,44 +38,48 @@ order: 2
         <h2>The Future is Here and It's IPv6</h2>
         <p>I have to have an excuse for putting a table so <b>here's why the future is IPv6.</b></p>
         <table class="table-comparison">
-            <tr>
-                <td />
-                <th>IPv4</th>
-                <th>IPv6</th>
-            </tr>
-            <tr>
-                <th scope="row">
-                    Address space
-                </th>
-                <td>
-                    cutesy 32-bit address space
-                </td>
-                <td>
-                    128-bit address space that's enough for like every atom or something
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    Routablility
-                </th>
-                <td>
-                    yucky NATs are needed for personal devices because of the 21st century
-                </td>
-                <td>
-                    non-link-local addresses are globally routable
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    IP Assignment
-                </th>
-                <td>
-                    DHCP is needed for dynamic IP assignment
-                </td>
-                <td>
-                    stateless automatic configuration of IP addresses
-                </td>
-            </tr>
+            <thead>
+                <tr>
+                    <td />
+                    <th>IPv4</th>
+                    <th>IPv6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        Address space
+                    </th>
+                    <td>
+                        cutesy 32-bit address space
+                    </td>
+                    <td>
+                        128-bit address space that's enough for like every atom or something
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Routablility
+                    </th>
+                    <td>
+                        yucky NATs are needed for personal devices because of the 21st century
+                    </td>
+                    <td>
+                        non-link-local addresses are globally routable
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        IP Assignment
+                    </th>
+                    <td>
+                        DHCP is needed for dynamic IP assignment
+                    </td>
+                    <td>
+                        stateless automatic configuration of IP addresses
+                    </td>
+                </tr>
+            </tbody>
         </table>
         <figure class="figure-dhcp-peg">
             <img alt="peg-dhcp implementation (Taken from https://www.reddit.com/r/ProgrammerHumor/comments/lunqt4/rfc2322_compliant_dhcp_server)"
