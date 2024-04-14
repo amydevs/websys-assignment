@@ -149,9 +149,9 @@ a:visited {
     opacity: 1;
 }
 
-.navbar nav ul:focus-within .active::after {
-    opacity: 0;
-}
+// .navbar nav ul:focus-within .active::after {
+//     opacity: 0;
+// }
 
 /* Desktop Stuff */
 
@@ -213,7 +213,7 @@ a:visited {
         opacity: 1;
     }
 
-    .navbar nav ul:focus-within .active::before {
-        opacity: 0;
-    }
+    // .navbar nav ul:focus-within .active::before {
+    //     opacity: 0;
+    // }
 }
