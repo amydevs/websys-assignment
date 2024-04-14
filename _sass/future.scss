@@ -10,3 +10,32 @@
     align-items: center;
     justify-content: center;
 }
+
+.section-i-love-ipv6 {
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    padding-top: $navbar-height;
+    min-height: calc(100vh - $navbar-height);
+    max-width: $content-max-width;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-comparison {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-comparison td, .table-comparison th {
+    border: 1px solid $text;
+    padding: 1rem;
+}
+
+.figure-dhcp-peg {
+    text-align: center;
+}
+
+.figure-dhcp-peg img {
+    max-height: 400px;
+}
