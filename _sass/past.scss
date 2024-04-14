@@ -34,14 +34,10 @@
     margin: 0 auto;
     display: flex;
     flex: 1;
-    overflow-y: hidden;
-    display: flex;
-    flex-direction: row;
 }
 
 .bento-position-wrapper .bento {
     flex: 1;
-    max-height: calc($content-max-width * 9/16);
 }
 
 // .bento-back-button {
@@ -154,7 +150,7 @@
     cursor: text;
 }
 
-.bento>*:focus>.bento-text .bento-description {
+.bento>*:hover>.bento-text .bento-description {
     max-height: 100vh;
 }
 
@@ -167,10 +163,13 @@
         padding: 0 $navbar-padding;
         padding-bottom: $navbar-padding; 
         width: calc(100% - $navbar-padding * 2);
+        height: calc($content-max-width * 9/16);
+        flex: initial;
     }
 
     .bento-position-wrapper .bento {
-        height: calc($content-max-width * 9/16);
+        border-radius: $rounded-border-radius;
+        overflow: hidden;
     }
 
     .bento-back-button {
