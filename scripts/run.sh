@@ -61,6 +61,6 @@ websocat "wss://sahara.au.edstem.org/run?ticket=${run_ticket}" --text --exit-on-
         if [ "$type" == "run_exit" ]; then 
             echo > $tmpdir/endpipe
         elif [ "$type" == "run_frame" ]; then
-            echo $line | jq -r '.data.data' | base64 --decode
+            echo $line | jq -r '.data.data' | base64 -di
         fi;
     done;
