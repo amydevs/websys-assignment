@@ -102,10 +102,12 @@ a:visited {
     height: 1.5rem;
 }
 
+.navbar nav:focus-within~#navbar-dropdown-button img,
 .navbar #navbar-dropdown-checkbox:checked~#navbar-dropdown-button img {
     transform: rotate(90deg);
 }
 
+.navbar nav:focus-within,
 .navbar #navbar-dropdown-checkbox:checked~nav {
     top: $navbar-height;
 }

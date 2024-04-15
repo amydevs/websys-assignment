@@ -45,6 +45,10 @@ order: 3
             The bento box design was originally going to use the :focus-within pseudo-selector to be more intuitive, as rather than an item expanding to fit the bento box on hover, it would do it on click. However, I had to remove this functionality as the CSS parser used in Edstem did not support it.
         </p>
         <h3>Accessibility</h3>
+        <h4>Accessibility Attributes on Elements</h4>
+        <p>
+            In order to be suitable for use with screen readers and other accessible technologies, I have included alt text on all images as well as titles on buttons. Furthermore, I have used custom tab-index attributes on the navbar elements so that navigation of the interface can be done entirely without a point device.
+        </p>
         <h4>Spacing</h4>
         <p>
             According to a tutorial published by W3.org {% cite eggert_2015_styling %}, a line of text should not be more than 80 characters. Therefore, it is best to have adiquate whitespace from the edges of the page, so that the users attention does not need to divert back and forth across the entire screen. I achieve this by applying a maximum width to most of my section elements and my navbar. I also apply auto horizontal margins to center the section on the page, and a padding of 2.5rem that is only noticable once the viewport width is lesser than the original width of the content within it.
@@ -54,4 +58,4 @@ order: 3
             {% bibliography %}
         </p>
     </div>
-</section>>
+</section>

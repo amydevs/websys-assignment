@@ -4,7 +4,7 @@
         <!-- This must be at the start, so that the `nav` sibling can be detected. -->
         <input id="navbar-dropdown-checkbox" type="checkbox" />
         <h1 class="logo">
-            <a href="index.html">Amy<span class="exclamation">!</span></a>
+            <a href="index.html" tabindex="1">Amy<span class="exclamation">!</span></a>
         </h1>
         <nav>
             <ul>
@@ -21,7 +21,7 @@
                 {% endfor %}
             </ul>
         </nav>
-        <label title="Toggle Mobile Dropdown" id="navbar-dropdown-button" for="navbar-dropdown-checkbox">
+        <label tabindex="2" title="Toggle Mobile Dropdown" id="navbar-dropdown-button" for="navbar-dropdown-checkbox">
             <img alt="Toggle Mobile Dropdown (Taken from https://www.radix-ui.com/icons)" src="assets/img/nav.svg" />
         </label>
     </div>
