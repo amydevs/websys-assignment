@@ -34,14 +34,14 @@ order: 3
         
         <h4>Spacing</h4>
         <p>
-            To enforce a section height based on the viewport, I apply some CSS attributes to the section element. The 2 important attributes are the padding-top and the min-height. The padding-top is set to the navbar height, so that content will not be hidden behind the navbar. The min-width is calculated by the viewport height minus the navbar height.
+            To enforce a section height based on the viewport, I apply some CSS attributes to the section element. The 2 important attributes are the <code>padding-top</code> and the <code>min-height</code>. The <code>padding-top</code> is set to the navbar height, so that content will not be hidden behind the navbar. The <code>min-width</code> is calculated by the viewport height minus the navbar height.
         </p>
         <h4>Bento Box</h4>
         <p>
-            The bento box design for my <a href="past.html#portfolio">portfolio</a> uses absolute positioning within a relatively positioned div. I did this rather than using a grid or a flex CSS display attribute, as it gives me greater flexibility in changing the size and shape of each item within the bento box without effecting the other elements.
+            The bento box design for my <a href="past.html#portfolio">portfolio</a> uses absolute positioning within a relatively positioned div. I did this rather than using a <code>grid</code> or a <code>flex</code> CSS <code>display</code> attribute, as it gives me greater flexibility in changing the size and shape of each item within the bento box without effecting the other elements.
         </p>
         <p>
-            The bento box design was originally going to use the :focus-within pseudo-selector to be more intuitive, as rather than an item expanding to fit the bento box on hover, it would do it on click. However, I had to remove this functionality as the CSS parser used in Edstem did not support it.
+            The bento box design was originally going to use the <code>:focus-within</code> pseudo-selector to be more intuitive, as rather than an item expanding to fit the bento box on hover, it would do it on click. However, I had to remove this functionality as the CSS parser used in Edstem did not support it.
         </p>
         <h3>Accessibility</h3>
         <p>
@@ -53,7 +53,11 @@ order: 3
         </p>
         <h4>Spacing</h4>
         <p>
-            According to a tutorial published by W3.org {% cite eggert_2015_styling %}, a line of text should not be more than 80 characters. Therefore, it is best to have adiquate whitespace from the edges of the page, so that the users attention does not need to divert back and forth across the entire screen. I achieve this by applying a maximum width to most of my section elements and my navbar. I also apply auto horizontal margins to center the section on the page, and a padding of 2.5rem that is only noticable once the viewport width is lesser than the original width of the content within it.
+            According to a tutorial published by W3.org {% cite eggert_2015_styling %}, a line of text should not be more than 80 characters. Therefore, it is best to have adiquate whitespace from the edges of the page, so that the users attention does not need to divert back and forth across the entire screen. I achieve this by applying a <code>max-width</code> to most of my section elements and my navbar. I also apply auto horizontal margins to center the section on the page, and a padding of <code>2.5rem</code> that is only noticable once the viewport width is lesser than the original width of the content within it.
+        </p>
+        <h3>Icons and Images</h3>
+        <p>
+            I am using SVG images in some places for the sake of smaller file-sizes and better responsiveness. However, I am concerned that these images may trip up a plagarism detector, as they contain XML encoded vector graphics. As such, I have provided the sources of the images as comments in the files themselves and on the alt text of img tags where they are used. Although, I will also cite them here for good measure. The mobile navbar hamburger menu icon is taken from {% cite _2024_radixuiicons %} and the image on the home page of my GitHub stats is generated from {% cite hazra_2024_anuraghazragithubreadmestats %}
         </p>
         <h2>Bibliography</h2>
         <p>
