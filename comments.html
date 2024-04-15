@@ -28,11 +28,11 @@ order: 3
         </p>
         <h3>Technical</h3>
         <p>
-            The structure of my site is designed around most section elements spanning the entire height of the screen. This simulates the effect of a page break in a word document.
+            The structure of my site is designed around most <code>section</code> elements spanning the entire height of the screen. This simulates the effect of a page break in a word document.
         </p>
         <h4>Classes, IDs and Selectors</h4>
         <p>
-            I have used `id` attributes for specific elements that only appear once in any given page. The <code>navbar-active</code> <code>id</code> is given to the active navbar <code>li</code> element, so that the <code>::after</code> and <code>::before</code> pseudo-elements of the <code>li</code> element can look underlined.
+            I have used <code>id</code> attributes for specific elements that only appear once in any given page. The <code>navbar-active</code> <code>id</code> is given to the active navbar <code>li</code> element, so that the <code>::after</code> and <code>::before</code> pseudo-elements of the <code>li</code> element can look underlined.
         </p>
         <p>
             I have also used the <code>navbar-dropdown-checkbox</code> <code>id</code>, not for styling purposes, but so that a <code>label</code> element can be used to reference the checkbox that it should be referencing. This checkbox is a hidden element that allows for the navbar on mobile views (viewports less than 768px width) to have a dropdown hamburger menu rather than a top bar for navigation. It does this by setting the <code>top</code> CSS attribute of the <code>nav</code> element by checking whether the checkbox is ticked using a general sibling selector (<code>~</code>).
