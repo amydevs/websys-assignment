@@ -33,6 +33,7 @@ order: 3
         <p>
             The structure of my site is designed around most section elements spanning the entire height of the screen. This simulates the effect of a page break in a word document.
         </p>
+        <h4>Spacing</h4>
         <p>
             To enforce a section height based on the viewport, I apply some CSS attributes to the section element. The 2 important attributes are the padding-top and the min-height. The padding-top is set to the navbar height, so that content will not be hidden behind the navbar. The min-width is calculated by the viewport height minus the navbar height.
         </p>
@@ -44,8 +45,9 @@ order: 3
             The bento box design was originally going to use the :focus-within pseudo-selector to be more intuitive, as rather than an item expanding to fit the bento box on hover, it would do it on click. However, I had to remove this functionality as the CSS parser used in Edstem did not support it.
         </p>
         <h3>Accessibility</h3>
+        <h4>Spacing</h4>
         <p>
-
+            According to a tutorial published by W3.org {% cite eggert_2015_styling %}, a line of text should not be more than 80 characters. Therefore, it is best to have adiquate whitespace from the edges of the page, so that the users attention does not need to divert back and forth across the entire screen. I achieve this by applying a maximum width to most of my section elements and my navbar. I also apply auto horizontal margins to center the section on the page, and a padding of 2.5rem that is only noticable once the viewport width is lesser than the original width of the content within it.
         </p>
         <h2>Bibliography</h2>
         <p>
