@@ -9,6 +9,7 @@ jekyll_tidy:
   exclude: ["websystems.scss"]
 plugins:
   - jekyll-tidy
+  - jekyll-scholar
 exclude:
   - README.md
   - "*.nix"

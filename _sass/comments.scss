@@ -1,0 +1,19 @@
+.section-comments {
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    padding-top: $navbar-height;
+    min-height: calc(100vh - $navbar-height);
+    max-width: $content-max-width;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bibliography {
+    list-style: none;
+}
+
+.bibliography li {
+    text-indent: -2.5rem;
+    padding-left: 2.5rem;
+}
