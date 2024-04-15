@@ -14,7 +14,7 @@
                         {%- continue -%}
                     {%- endif -%}
                     {%- if page.url == node.url -%}
-                        <li class="active"><a href="{{ page_url }}">{{node.title}}</a></li>
+                        <li id="navbar-active"><a href="{{ page_url }}">{{node.title}}</a></li>
                     {%- else -%}
                         <li><a href="{{ page_url }}">{{node.title}}</a></li>
                     {%- endif -%}

@@ -144,12 +144,12 @@ a:visited {
     border-radius: 100%;
 }
 
-.navbar nav ul li.active::after,
-.navbar nav ul li:not(.active):hover::after {
+.navbar nav ul li#navbar-active::after,
+.navbar nav ul li:not(#navbar-active):hover::after {
     opacity: 1;
 }
 
-// .navbar nav ul:focus-within .active::after {
+// .navbar nav ul:focus-within #navbar-active::after {
 //     opacity: 0;
 // }
 
@@ -208,12 +208,12 @@ a:visited {
         opacity: 0;
     }
 
-    .navbar nav ul li.active::before,
-    .navbar nav ul li:not(.active):hover::before {
+    .navbar nav ul li#navbar-active::before,
+    .navbar nav ul li:not(#navbar-active):hover::before {
         opacity: 1;
     }
 
-    // .navbar nav ul:focus-within .active::before {
+    // .navbar nav ul:focus-within #navbar-active::before {
     //     opacity: 0;
     // }
 }
