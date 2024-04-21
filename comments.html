@@ -6,6 +6,10 @@ order: 3
 <section class="section-comments">
     <div>
         <h2>Comments</h2>
+        <h3>Reflection</h3>
+        <p>
+            Overall, it was a fun experience working around the limitations of the assignment specification to create a modern website that still has some semblance of interactivity. However I think the current design, although serviceable, is a bit bland. If I were to work on the website again and were given more time, I think I would spend a lot more time thinking about the design language of the site. I'm able to figure out how to style anything that has been given to me within a design document, but I've never been any good at actually designing something aesthetically pleasing myself.
+        </p>
         <h3>Aesthetics</h3>
         <p>
             The colour scheme that I've implemented is inspired from one of the first projects I've ever worked on, being the <a href="https://spinsha.re">Spinsha.re</a> desktop client. 
@@ -15,7 +19,7 @@ order: 3
             Whilst they focus on a dark-theme, I have focused on a light-theme to improve accessibility. According to an unofficial A11Y guidebook {% cite Georgakas2023 %}, users with astigmatism or dyslexia may have trouble with reading white text on black or dark backgrounds, which is a primary characteristic of dark-theme websites. As such, I've also decided to adapt the accent colours to better contrast on a white background.
         </p>
         <p>
-            Speaking of my choice of colours, I have chosen a light berry-pink as my primary colour (#d61b69). This is elements such as the navigation bar indicator, as well as unclinked hyperlinks.
+            Speaking of my choice of colours, I have chosen a light berry-pink as my primary colour (#d61b69). This is elements such as the navigation bar indicator, as well as unclicked hyperlinks.
         </p>
         <p>
             My accent colour (#c52b6b) is a slightly darkened version of the primary colour. This is mainly used in visited hyperlinks.
@@ -24,33 +28,36 @@ order: 3
             My secondary colour (#ffa3c9) is a lightened version of primary colour. This mainly used for backgrounds of cards and modal elements.
         </p>
         <p>
-            Taking inspiration from a web designed color theory guide {% cite ogrady_2023_color %}, my reasoning for deriving a colour palette from tints and shades of a base colour, is to build a monochrome colour palette. This offers a cohesive and unopionated colour scheme that is very readable and easy to maintain.
+            Taking inspiration from a web designed colour theory guide {% cite ogrady_2023_color %}, my reasoning for deriving a colour palette from tints and shades of a base colour, is to build a monochrome colour palette. This achieves a cohesive and unopinionated colour scheme that is very readable and easy to maintain.
+        </p>
+        <p>
+            The structure of my site is designed around most <code>section</code> elements spanning the entire height of the screen. I was trying to achieve something that simulates the effect of a page break in a word document. I hoped this would be more aesthetically pleasing by giving the content more focus and space to breathe. I've explained more as to how I've achieved this in the technical section.
         </p>
         <h3>Technical</h3>
-        <p>
-            The structure of my site is designed around most <code>section</code> elements spanning the entire height of the screen. This simulates the effect of a page break in a word document.
-        </p>
         <h4>Classes, IDs and Selectors</h4>
         <p>
             I have used <code>id</code> attributes for specific elements that only appear once in any given page. The <code>navbar-active</code> <code>id</code> is given to the active navbar <code>li</code> element, so that the <code>::after</code> and <code>::before</code> pseudo-elements of the <code>li</code> element can look underlined.
         </p>
         <p>
-            I have also used the <code>navbar-dropdown-checkbox</code> <code>id</code>, not for styling purposes, but so that a <code>label</code> element can be used to reference the checkbox that it should be referencing. This checkbox is a hidden element that allows for the navbar on mobile views (viewports less than 768px width) to have a dropdown hamburger menu rather than a top bar for navigation. It does this by setting the <code>top</code> CSS attribute of the <code>nav</code> element by checking whether the checkbox is ticked using a general sibling selector (<code>~</code>).
+            I have also used the <code>navbar-dropdown-checkbox</code> <code>id</code>, not for styling purposes, but so that a <code>label</code> element can be used to reference the checkbox that it should be referencing. This checkbox is a hidden element that allows for the navbar on mobile views (viewports less than 768px width) to have a dropdown hamburger menu rather than a top bar for navigation. It does this by setting the <code>top</code> CSS properties of the <code>nav</code> element by checking whether the checkbox is ticked using a general sibling selector (<code>~</code>).
         </p>
         <h4>Spacing</h4>
         <p>
-            To enforce a section height based on the viewport, I apply some CSS attributes to the section element. The 2 important attributes are the <code>padding-top</code> and the <code>min-height</code>. The <code>padding-top</code> is set to the navbar height, so that content will not be hidden behind the navbar. The <code>min-width</code> is calculated by the viewport height minus the navbar height.
+            To enforce a section height based on the viewport, I apply some CSS properties to the section element. The 2 important properties are the <code>padding-top</code> and the <code>min-height</code>. The <code>padding-top</code> is set to the navbar height, so that content will not be hidden behind the navbar. The <code>min-width</code> is calculated by the viewport height minus the navbar height.
+        </p>
+        <p>
+            Because I have used <code>vh</code> to set the height of <code>section</code> elements, using percentage values to set the height of child elements does not work. In these cases I've found <code>display: flex</code> and <code>flex: 1</code> to be quite useful in making child elements take up the entirety of the parent. Furthermore, flexboxes also have some positioning algorithms that make alignment of items really easy. These are accessible via <code>align-...</code> and <code>justify-...</code> properties, and is what I use in most places to centre most elements other than text. These techniques are described in {% cite comeau_2024_how %} and {% cite coyier_2014_centering %}.
         </p>
         <h4>Bento Box</h4>
         <p>
-            The bento box design for my <a href="past.html#portfolio">portfolio</a> uses absolute positioning within a relatively positioned div. I did this rather than using a <code>grid</code> or a <code>flex</code> CSS <code>display</code> attribute, as it gives me greater flexibility in changing the size and shape of each item within the bento box without effecting the other elements.
+            The bento box design for my <a href="past.html#portfolio">portfolio</a> uses absolute positioning within a relatively positioned div. I did this rather than using a <code>grid</code> or a <code>flex</code> CSS <code>display</code> property, as it gives me greater flexibility in changing the size and shape of each item within the bento box without effecting the other elements.
         </p>
         <p>
-            The bento box design was originally going to use the <code>:focus-within</code> pseudo-selector to be more intuitive, as rather than an item expanding to fit the bento box on hover, it would do it on click. However, I had to remove this functionality as the CSS parser used in Edstem did not support it.
+            The bento box design was originally going to use the <code>:focus-within</code> pseudo-selector to be more intuitive. Rather than an item expanding to fit the bento box on hover, it would originally do it on click. However, I had to remove this functionality as the CSS parser used in Edstem did not support it.
         </p>
         <h3>Accessibility</h3>
         <p>
-            I have already mentioned my use of a light theme as both an aesthetic and accesibility choice. Along with this, I have also implemented other accesibility features.
+            I have already mentioned my use of a light theme as both an aesthetic and accessible choice. Along with this I have taken note from the W3C Web Content Accessibility Guidelines {% cite w3c_2018_web %} to ensure that non-text content have text alternatives, the website is entirely keyboard accessible, as well as being readable with CSS disabled to ensure the ordering of the elements on my page are screen reader friendly.
         </p>
         <h4>Accessibility Attributes on Elements</h4>
         <p>
@@ -58,11 +65,11 @@ order: 3
         </p>
         <h4>Spacing</h4>
         <p>
-            According to a tutorial published by W3.org {% cite eggert_2015_styling %}, a line of text should not be more than 80 characters. Therefore, it is best to have adiquate whitespace from the edges of the page, so that the users attention does not need to divert back and forth across the entire screen. I achieve this by applying a <code>max-width</code> to most of my section elements and my navbar. I also apply auto horizontal margins to center the section on the page, and a padding of <code>2.5rem</code> that is only noticable once the viewport width is lesser than the original width of the content within it.
+            According to a tutorial published by W3.org {% cite eggert_2015_styling %}, a line of text should not be more than 80 characters. Therefore, it is best to have adequate whitespace from the edges of the page, so that the users attention does not need to divert back and forth across the entire screen. I achieve this by applying a <code>max-width</code> to most of my section elements and my navbar. I also apply auto horizontal margins to centre the section on the page, and a padding of <code>2.5rem</code> that is only noticeable once the viewport width is lesser than the original width of the content within it.
         </p>
         <h3>Icons and Images</h3>
         <p>
-            I am using SVG images in some places for the sake of smaller file-sizes and better responsiveness. However, I am concerned that these images may trip up a plagarism detector, as they contain XML encoded vector graphics. As such, I have provided the sources of the images as comments in the files themselves and on the alt text of img tags where they are used. Although, I will also cite them here for good measure. The mobile navbar hamburger menu icon is taken from {% cite radixui_2024_radixuiicons %} and the image on the home page of my GitHub stats is generated from {% cite hazra_2024_anuraghazragithubreadmestats %}
+            I am using SVG images in some places for the sake of smaller file-sizes and better responsiveness. However, I am concerned that these images may trip up a plagiarism detector, as they contain XML encoded vector graphics. As such, I have provided the sources of the images as comments in the files themselves and on the alt text of <code>img</code> tags where they are used. Although, I will also cite them here for good measure. The mobile navbar hamburger menu icon is taken from {% cite radixui_2024_radixuiicons %} and the image on the home page of my GitHub stats is generated from {% cite hazra_2024_anuraghazragithubreadmestats %}
         </p>
         <h2>Bibliography</h2>
         <p>
